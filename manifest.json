@@ -1,43 +1,26 @@
 {
-  "name": "İnşaat Maliyet Pro",
-  "short_name": "Maliyet Pro",
-  "description": "Konut, hastane, okul, fabrika ve prefabrik yapı maliyetlerini dakikalar içinde hesapla. Türkiye 2026 piyasa fiyatlarıyla güncel.",
-  "start_url": "./index.html",
-  "scope": "./",
-  "display": "standalone",
-  "orientation": "portrait",
-  "theme_color": "#0f2d1f",
   "background_color": "#0f2d1f",
-  "lang": "tr",
   "dir": "ltr",
-  "categories": ["business", "productivity", "utilities"],
+  "display": "standalone",
+  "name": "İnşaat Pro",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Maliyet Pro",
+  "start_url": "/",
+  "theme_color": "rgb(15, 45, 31)",
   "icons": [
     {
-      "src": "AppIcon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "AppIcon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "file:///C:/Users/work/Downloads/AppIcon-192.png",
+      "isSquare": false,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 0,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Yeni Hesaplama",
-      "short_name": "Hesapla",
-      "url": "./index.html",
-      "icons": [{ "src": "AppIcon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Özel Yapı",
-      "short_name": "Hastane/Okul",
-      "url": "./index.html#ozel",
-      "icons": [{ "src": "AppIcon-192.png", "sizes": "192x192" }]
-    }
-  ],
-  "screenshots": []
+  "description": "İnşaat maliyet hesaplama uygulaması",
+  "id": "https://selimhangulusur-art.github.io/insaat-maliyet-pro/"
 }
