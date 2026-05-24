@@ -5,9 +5,9 @@
   "name": "İnşaat Pro",
   "orientation": "any",
   "scope": "/",
-  "short_name": "Maliyet Pro",
-  "start_url": "/",
-  "theme_color": "rgb(15, 45, 31)",
+  "short_name": "İnşaat Pro",
+  "start_url": "/https://selimhangulusur-art.github.io/insaat-maliyet-pro/",
+  "theme_color": "#0f2d1f",
   "icons": [
     {
       "src": "file:///C:/Users/work/Downloads/AppIcon-192.png",
@@ -21,6 +21,5 @@
       "is192x192": false
     }
   ],
-  "description": "İnşaat maliyet hesaplama uygulaması",
-  "id": "https://selimhangulusur-art.github.io/insaat-maliyet-pro/"
+  "description": "İnşaat maliyet hesaplama uygulaması"
 }
