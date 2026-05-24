@@ -1,25 +1,29 @@
 {
-  "background_color": "#0f2d1f",
-  "dir": "ltr",
+  "name": "İnşaat Maliyet Pro",
+  "short_name": "Maliyet Pro",
+  "description": "Konut, hastane, okul, fabrika ve prefabrik yapı maliyetlerini dakikalar içinde hesapla.",
+  "start_url": "https://selimhangulusur-art.github.io/insaat-maliyet-pro/index.html",
+  "scope": "https://selimhangulusur-art.github.io/insaat-maliyet-pro/",
   "display": "standalone",
-  "name": "İnşaat Pro",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "İnşaat Pro",
-  "start_url": "/https://selimhangulusur-art.github.io/insaat-maliyet-pro/",
+  "orientation": "portrait",
   "theme_color": "#0f2d1f",
+  "background_color": "#0f2d1f",
+  "lang": "tr",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
-      "src": "file:///C:/Users/work/Downloads/AppIcon-192.png",
-      "isSquare": false,
-      "isPng": true,
-      "isWebp": false,
-      "isJpg": false,
-      "width": 0,
-      "is512x512": false,
-      "is256x256": false,
-      "is192x192": false
+      "src": "https://selimhangulusur-art.github.io/insaat-maliyet-pro/AppIcon-180.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://selimhangulusur-art.github.io/insaat-maliyet-pro/AppIcon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "description": "İnşaat maliyet hesaplama uygulaması"
+  "screenshots": []
 }
