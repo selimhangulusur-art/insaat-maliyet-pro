@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/work/Downloads/index.html -->
+<html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>İnşaat Maliyet Pro</title>
+<link rel="manifest" href="file:///C:/Users/work/Downloads/manifest.json">
+<meta name="theme-color" content="#1c4532">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="İnşaat Pro">
+<link rel="apple-touch-icon" href="file:///C:/Users/work/Downloads/AppIcon-192.png">
+<link href="./İnşaat Maliyet Pro_files/css2" .="" İnşaat="" maliyet="" pro_files="" css2"family="Syne:wght@700;800href=&quot;./İnşaat" css2"display="swap&quot;" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1ea;--sf:#fff;--s2:#ede8dc;--bd:#d5cdbf;
+  --G:#1c4532;--G2:#276749;--GL:#eaf4ee;
+  --O:#b54a14;--OL:#fdf0e8;
+  --B:#1a3d6b;--BL:#e8f0fa;
+  --P:#6b3fa0;--PL:#f3eeff;
+  --Y:#8a6914;--YL:#fdf8e8;
+  --T:#1a1a14;--M:#7a7565;--R:#b03030;
+  --sh:0 2px 14px rgba(0,0,0,0.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--T);font-family:'DM Sans',sans-serif;min-height:100vh;padding-bottom:72px}
+.nav{position:fixed;bottom:0;left:0;right:0;background:var(--G);display:flex;z-index:200;box-shadow:0 -2px 18px rgba(0,0,0,0.18)}
+.nb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 2px 10px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.4);font-family:'DM Sans',sans-serif;font-size:.52rem;font-weight:500;gap:3px;transition:color .2s}
+.nb.active{color:#fff}
+.nb-i{font-size:1.2rem}
+.pg{display:none}
+.pg.active{display:block}
+.ph{background:linear-gradient(155deg,var(--G) 65%,var(--G2));color:#fff;padding:52px 18px 18px;position:relative;overflow:hidden}
+.ph::after{content:'';position:absolute;right:-24px;top:-24px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+.ph h1{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:800;line-height:1.1}
+.ph p{font-size:.7rem;opacity:.6;margin-top:4px}
+.mtabs{display:flex;gap:3px;padding:10px 14px 0;overflow-x:auto;scrollbar-width:none}
+.mtabs::-webkit-scrollbar{display:none}
+.mtab{padding:7px 14px;border:none;border-radius:20px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:500;color:var(--M);background:var(--sf);border:1.5px solid var(--bd);white-space:nowrap;transition:all .15s}
+.mtab.active{background:var(--G);border-color:var(--G);color:#fff;font-weight:600}
+.card{background:var(--sf);border-radius:13px;margin:9px 14px;box-shadow:var(--sh);overflow:hidden}
+.ch{padding:12px 14px 10px;border-bottom:1.5px solid var(--bd);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cht{font-family:'Syne',sans-serif;font-size:.86rem;font-weight:700;color:var(--G)}
+.cb{padding:12px 14px}
+.fl{font-size:.63rem;font-weight:600;color:var(--M);letter-spacing:.9px;text-transform:uppercase;margin-bottom:5px;display:block}
+.fi,.fs{width:100%;background:var(--s2);border:1.5px solid var(--bd);color:var(--T);padding:10px 12px;font-family:'DM Sans',sans-serif;font-size:.87rem;border-radius:9px;outline:none;transition:border-color .15s;-webkit-appearance:none}
+.fi:focus,.fs:focus{border-color:var(--G);background:#fff}
+.fr{margin-bottom:10px}
+.ig{display:flex;gap:6px}
+.ig .fi{flex:1}
+.sfx{background:var(--GL);color:var(--G);border:1.5px solid var(--bd);border-radius:9px;padding:10px 9px;font-size:.74rem;font-weight:600;white-space:nowrap;display:flex;align-items:center}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn{display:block;width:100%;padding:13px;border:none;border-radius:11px;cursor:pointer;font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;transition:all .15s;text-align:center}
+.btn-G{background:var(--G);color:#fff;box-shadow:0 3px 10px rgba(28,69,50,.25)}
+.btn-G:active{background:var(--G2);transform:scale(.98)}
+.btn-O{background:var(--O);color:#fff}
+.btn-B{background:var(--B);color:#fff}
+.btn-out{background:transparent;color:var(--G);border:2px solid var(--G);font-size:.83rem;padding:10px}
+.bsm{padding:5px 11px;font-size:.7rem;border-radius:7px;width:auto;display:inline-block;font-family:'DM Sans',sans-serif;font-weight:600}
+/* HESAPLA BIG BUTTON */
+.hesapla-btn{background:linear-gradient(135deg,var(--G),var(--G2));color:#fff;border:none;border-radius:14px;width:calc(100% - 28px);margin:10px 14px;padding:16px;font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 16px rgba(28,69,50,.3);transition:all .15s;letter-spacing:.3px}
+.hesapla-btn:active{transform:scale(.97)}
+.hesapla-btn .hb-ic{font-size:1.4rem}
+/* CHK */
+.chk-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.ck{display:flex;align-items:center;gap:6px;font-size:.8rem;cursor:pointer;padding:8px 9px;background:var(--s2);border-radius:8px;border:1.5px solid var(--bd);transition:all .15s}
+.ck:has(input:checked){background:var(--GL);border-color:var(--G);color:var(--G);font-weight:500}
+.ck input{accent-color:var(--G);flex-shrink:0}
+/* BILINMEYEN GİDER */
+.bilinmeyen-box{background:var(--YL);border:1.5px solid rgba(138,105,20,.25);border-radius:11px;padding:13px 14px;margin:0 14px 0}
+.bx-title{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--Y);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.bx-opts{display:flex;gap:6px}
+.bx-opt{flex:1;padding:8px 6px;border:1.5px solid rgba(138,105,20,.3);border-radius:8px;background:var(--sf);color:var(--Y);font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.bx-opt.active{background:var(--Y);color:#fff;border-color:var(--Y)}
+/* ── PAYWALL ─────────────────────────────────── */
+.pw-overlay{position:fixed;inset:0;z-index:999;background:rgba(10,20,14,.92);display:flex;align-items:flex-end;justify-content:center}
+.pw-sheet{background:#fff;border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:0 0 32px;overflow:hidden;animation:slideUp .32s cubic-bezier(.22,.68,0,1.2)}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.pw-hero{background:linear-gradient(155deg,#0f2d1f,#1c6b40);padding:28px 24px 20px;text-align:center;color:#fff}
+.pw-logo{width:64px;height:64px;background:#3dcc7a;border-radius:16px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.pw-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:4px}
+.pw-sub{font-size:.75rem;opacity:.7}
+.pw-trial-badge{display:inline-block;background:#e8a020;color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-top:10px;letter-spacing:.4px}
+.pw-features{padding:16px 24px 0}
+.pw-feat{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.82rem;color:#333;border-bottom:1px solid #f0f0f0}
+.pw-feat:last-child{border-bottom:none}
+.pw-feat-ic{width:28px;height:28px;border-radius:8px;background:#eaf4ee;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.pw-plans{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 24px 0}
+.pw-plan{border:2px solid #d5cdbf;border-radius:14px;padding:14px 12px;cursor:pointer;transition:all .15s;position:relative;text-align:center}
+.pw-plan.best{border-color:#1c6b40;background:#eaf4ee}
+.pw-plan-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#1c6b40;color:#fff;font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:10px;white-space:nowrap}
+.pw-plan-name{font-size:.72rem;color:#7a7565;font-weight:600;margin-bottom:4px}
+.pw-plan-price{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;color:#1a1a14}
+.pw-plan-period{font-size:.62rem;color:#7a7565}
+.pw-plan-save{font-size:.65rem;color:#1c6b40;font-weight:600;margin-top:3px}
+.pw-plan.selected{border-color:#1c6b40;background:#eaf4ee}
+.pw-cta{margin:16px 24px 0;background:linear-gradient(135deg,#1c6b40,#3dcc7a);color:#fff;border:none;border-radius:14px;width:100%;padding:16px;font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;letter-spacing:.3px}
+.pw-legal{text-align:center;font-size:.62rem;color:#aaa;padding:10px 24px 0;line-height:1.5}
+.pw-restore{display:block;text-align:center;font-size:.7rem;color:#7a7565;padding:8px 0 0;cursor:pointer;text-decoration:underline}
+/* Trial banner (uygulama içi) */
+.trial-bar{background:#e8a020;color:#fff;text-align:center;font-size:.72rem;font-weight:600;padding:6px 14px;display:none}
+.trial-bar.show{display:block}
+/* Lock overlay on cards */
+.locked-blur{filter:blur(3px);pointer-events:none;user-select:none}
+.lock-badge{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,255,255,.7);border-radius:13px;z-index:10;cursor:pointer}
+.lock-ic{font-size:1.6rem;margin-bottom:4px}
+.lock-txt{font-size:.75rem;font-weight:600;color:#1c6b40}
+/* ── PAYWALL BİTİŞ ──────────────────────────── */
+
+/* ÖZEL YAPILAR */
+.oz-types{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px}
+.oz-type{display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 8px;border-radius:12px;border:2px solid var(--bd);background:var(--sf);cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
+.oz-type.active{border-color:var(--B);background:var(--BL)}
+.oz-ic{font-size:1.6rem}
+.oz-lb{font-size:.72rem;font-weight:600;color:var(--M);text-align:center;line-height:1.2}
+.oz-type.active .oz-lb{color:var(--B)}
+.oz-desc-band{margin:8px 14px;background:var(--BL);border:1.5px solid rgba(26,61,107,.15);border-radius:10px;padding:9px 12px;font-size:.73rem;color:var(--B);line-height:1.5}
+.oz-chk-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.oz-ck{display:flex;align-items:center;gap:6px;font-size:.78rem;cursor:pointer;padding:8px 9px;background:var(--s2);border-radius:8px;border:1.5px solid var(--bd);transition:all .15s}
+.oz-ck:has(input:checked){background:var(--BL);border-color:var(--B);color:var(--B);font-weight:500}
+.oz-ck input{accent-color:var(--B);flex-shrink:0}
+.oz-ct{border-collapse:collapse;width:100%;font-size:.78rem}
+.oz-ct th{background:var(--GL);padding:8px 10px;text-align:left;font-size:.68rem;color:var(--G);border-bottom:1.5px solid var(--bd)}
+.oz-ct td{padding:8px 10px;border-bottom:1px solid var(--s2)}
+.oz-ct tr:last-child td{font-weight:700;background:var(--GL);color:var(--G)}
+
+.krow{background:var(--s2);border-radius:8px;padding:9px 11px;display:flex;align-items:center;gap:7px;border:1.5px solid var(--bd);margin-bottom:5px}
+.k-ic{font-size:1rem;width:24px;text-align:center;flex-shrink:0}
+.k-info{flex:1;min-width:0}
+.k-name{font-size:.8rem;font-weight:600}
+.k-det{font-size:.66rem;color:var(--M);margin-top:1px}
+.k-del{background:#fde8e8;color:var(--R);border:none;border-radius:6px;padding:4px 8px;cursor:pointer;font-size:.75rem;flex-shrink:0}
+/* RESULTS */
+.banner{background:linear-gradient(135deg,var(--G),var(--G2));color:#fff;margin:9px 14px;border-radius:13px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.ban-ic{font-size:1.8rem}
+.ban-v{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:800;line-height:1}
+.ban-l{font-size:.67rem;opacity:.75;margin-top:3px}
+.minis{display:grid;gap:7px;margin:0 14px 2px}
+.mini{border-radius:10px;padding:10px 9px;text-align:center}
+.mini.mat{background:var(--BL);border:1px solid rgba(26,61,107,.12)}
+.mini.isc{background:var(--OL);border:1px solid rgba(181,74,20,.12)}
+.mini.prj{background:var(--PL);border:1px solid rgba(107,63,160,.12)}
+.mini.bil{background:var(--YL);border:1px solid rgba(138,105,20,.2)}
+.mini-v{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800}
+.mini.mat .mini-v{color:var(--B)}
+.mini.isc .mini-v{color:var(--O)}
+.mini.prj .mini-v{color:var(--P)}
+.mini.bil .mini-v{color:var(--Y)}
+.mini-l{font-size:.6rem;color:var(--M);margin-top:2px}
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+.ri{background:var(--GL);border-radius:8px;padding:9px;border:1px solid rgba(28,69,50,.1)}
+.ri.full{grid-column:1/-1}
+.ri.oi{background:var(--OL);border-color:rgba(181,74,20,.1)}
+.ri.bi{background:var(--BL);border-color:rgba(26,61,107,.1)}
+.ri.pi{background:var(--PL);border-color:rgba(107,63,160,.1)}
+.ri.yi{background:var(--YL);border-color:rgba(138,105,20,.15)}
+.rl{font-size:.58rem;font-weight:600;color:var(--M);letter-spacing:.8px;text-transform:uppercase;margin-bottom:2px}
+.rv{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;color:var(--G)}
+.ri.oi .rv{color:var(--O)}
+.ri.bi .rv{color:var(--B)}
+.ri.pi .rv{color:var(--P)}
+.ri.yi .rv{color:var(--Y)}
+/* TABLE */
+.ct{width:100%;border-collapse:collapse;font-size:.76rem}
+.ct th{background:var(--G);color:#fff;padding:7px 8px;text-align:left;font-family:'Syne',sans-serif;font-size:.67rem;font-weight:700}
+.ct td{padding:7px 8px;border-bottom:1px solid var(--bd)}
+.ct tr:last-child td{border-bottom:none}
+.ct .tr-mat td{background:var(--BL);color:var(--B);font-weight:600;border-bottom:none}
+.ct .tr-isc td{background:var(--OL);color:var(--O);font-weight:600;border-bottom:none}
+.ct .tr-prj td{background:var(--PL);color:var(--P);font-weight:600;border-bottom:none}
+.ct .tr-bil td{background:var(--YL);color:var(--Y);font-weight:600;border-bottom:none}
+.ct .tr-top td{background:var(--GL);color:var(--G);font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;border-bottom:none}
+/* PRICE LIST */
+.ptabs{display:flex;gap:5px;padding:10px 14px 0;overflow-x:auto;scrollbar-width:none}
+.ptabs::-webkit-scrollbar{display:none}
+.pcat{background:var(--sf);border:1.5px solid var(--bd);color:var(--M);padding:6px 11px;border-radius:15px;font-size:.72rem;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .15s}
+.pcat.active{background:var(--G);border-color:var(--G);color:#fff}
+.plist{padding:5px 14px 14px}
+.pi{display:flex;align-items:center;gap:9px;padding:11px 0;border-bottom:1px solid var(--bd)}
+.pi:last-child{border-bottom:none}
+.pi-ic{font-size:1.1rem;width:28px;text-align:center;flex-shrink:0}
+.pi-info{flex:1}
+.pi-name{font-size:.82rem;font-weight:500;line-height:1.3}
+.pi-unit{font-size:.65rem;color:var(--M);margin-top:1px}
+.pi-right{text-align:right;flex-shrink:0}
+.pi-price{font-family:'Syne',sans-serif;font-size:.86rem;font-weight:700;color:var(--G)}
+.pi-sub{font-size:.58rem;color:var(--M);margin-top:1px}
+/* PROJELER */
+.pj{margin:0 14px 9px;background:var(--sf);border-radius:13px;box-shadow:var(--sh);overflow:hidden;border-left:4px solid var(--G)}
+.pjh{display:flex;align-items:flex-start;justify-content:space-between;padding:12px 12px 7px;gap:8px}
+.pj-name{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700}
+.pj-sub{font-size:.65rem;color:var(--M);margin-top:2px}
+.pj-cost{font-family:'Syne',sans-serif;font-size:.98rem;font-weight:800;color:var(--G);text-align:right;white-space:nowrap}
+.pj-cl{font-size:.58rem;color:var(--M)}
+.pjtags{display:flex;gap:4px;padding:0 12px 8px;flex-wrap:wrap}
+.tag{border-radius:4px;padding:2px 7px;font-size:.63rem;font-weight:600}
+.tag.g{background:var(--GL);color:var(--G)}
+.tag.b{background:var(--BL);color:var(--B)}
+.tag.o{background:var(--OL);color:var(--O)}
+.tag.p{background:var(--PL);color:var(--P)}
+.tag.y{background:var(--YL);color:var(--Y)}
+.pja{display:flex;gap:5px;padding:0 12px 11px}
+.pjb{flex:1;padding:7px;border:none;border-radius:7px;cursor:pointer;font-size:.7rem;font-weight:600;font-family:'DM Sans',sans-serif}
+.pjb.d{background:var(--GL);color:var(--G)}
+.pjb.e{background:var(--OL);color:var(--O)}
+.pjb.r{background:#fde8e8;color:var(--R)}
+/* MODAL */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.62);backdrop-filter:blur(5px);z-index:300;display:flex;align-items:flex-end}
+.ov.hid{display:none}
+.mbox{background:var(--sf);width:100%;border-radius:20px 20px 0 0;padding:18px 15px 36px;max-height:88vh;overflow-y:auto}
+.mh{width:36px;height:4px;background:var(--bd);border-radius:2px;margin:0 auto 14px}
+.mt{font-family:'Syne',sans-serif;font-size:.98rem;font-weight:800;margin-bottom:11px;color:var(--G)}
+.mct{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-bottom:9px;padding-bottom:2px}
+.mct::-webkit-scrollbar{display:none}
+.mcb{background:var(--s2);border:1.5px solid var(--bd);color:var(--M);padding:5px 11px;border-radius:14px;font-size:.7rem;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .15s}
+.mcb.active{background:var(--G);border-color:var(--G);color:#fff}
+.pitem{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid var(--bd);cursor:pointer}
+.pitem:last-child{border-bottom:none}
+.pitem:active{background:var(--GL);padding-left:4px;margin:0 -4px;border-radius:5px}
+.pit-ic{font-size:1rem;width:26px;text-align:center;flex-shrink:0}
+.pit-name{font-size:.82rem;font-weight:500;flex:1}
+.pit-unit{font-size:.64rem;color:var(--M)}
+.pit-price{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--G);white-space:nowrap}
+.qov{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(5px);z-index:400;display:flex;align-items:center;justify-content:center;padding:16px}
+.qov.hid{display:none}
+.qbox{background:var(--sf);border-radius:16px;padding:20px 17px;width:100%;max-width:340px}
+.qt{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:2px}
+.qs{font-size:.71rem;color:var(--M);margin-bottom:12px;line-height:1.4}
+.dov{position:fixed;inset:0;background:rgba(0,0,0,.62);backdrop-filter:blur(5px);z-index:300;display:flex;align-items:flex-end}
+.dov.hid{display:none}
+.empty{text-align:center;padding:40px 20px;color:var(--M)}
+.empty-i{font-size:2.6rem;margin-bottom:9px}
+.empty h3{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;margin-bottom:4px;color:var(--T)}
+.empty p{font-size:.76rem;line-height:1.5}
+.ibox{background:var(--BL);border:1px solid rgba(26,61,107,.16);border-radius:8px;padding:8px 11px;font-size:.73rem;color:var(--B);line-height:1.5;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAYWALL OVERLAY -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="pw-overlay" id="pwOverlay" style="display: flex;">
+  <div class="pw-sheet">
+    <div class="pw-hero">
+      <div class="pw-logo">🏗️</div>
+      <div class="pw-title">İnşaat Maliyet Pro</div>
+      <div class="pw-sub">Türkiye'nin #1 İnşaat Maliyet Uygulaması</div>
+      <div class="pw-trial-badge">🎁 3 Gün Ücretsiz Dene</div>
+    </div>
+
+    <div class="pw-features">
+      <div class="pw-feat"><div class="pw-feat-ic">🏥</div><span>Hastane, okul, fabrika, prefabrik maliyet hesabı</span></div>
+      <div class="pw-feat"><div class="pw-feat-ic">📊</div><span>Sınırsız proje kaydetme ve raporlama</span></div>
+      <div class="pw-feat"><div class="pw-feat-ic">💹</div><span>2026 güncel İstanbul piyasa fiyatları</span></div>
+      <div class="pw-feat"><div class="pw-feat-ic">📄</div><span>PDF rapor oluşturma ve paylaşma</span></div>
+      <div class="pw-feat"><div class="pw-feat-ic">🔄</div><span>Aylık otomatik fiyat güncellemeleri</span></div>
+    </div>
+
+    <div class="pw-plans">
+      <div class="pw-plan" id="plan-aylik" onclick="selectPlan(&#39;aylik&#39;)">
+        <div class="pw-plan-name">Aylık</div>
+        <div class="pw-plan-price">199₺</div>
+        <div class="pw-plan-period">/ ay</div>
+      </div>
+      <div class="pw-plan best selected" id="plan-yillik" onclick="selectPlan(&#39;yillik&#39;)">
+        <div class="pw-plan-badge">⭐ En Çok Tercih</div>
+        <div class="pw-plan-name">Yıllık</div>
+        <div class="pw-plan-price">999₺</div>
+        <div class="pw-plan-period">/ yıl</div>
+        <div class="pw-plan-save">%58 tasarruf</div>
+      </div>
+    </div>
+
+    <button class="pw-cta" onclick="startTrial()">
+      3 Gün Ücretsiz Başla →
+    </button>
+
+    <div class="pw-legal">
+      Deneme süresi sonunda seçilen plan otomatik olarak aktif olur.<br>
+      İstediğin zaman iptal edebilirsin. App Store üzerinden yönetilir.
+    </div>
+    <span class="pw-restore" onclick="restorePurchase()">Satın almayı geri yükle</span>
+  </div>
+</div>
+
+<!-- Trial bar (uygulama içinde gösterilir) -->
+<div class="trial-bar" id="trialBar">
+  🎁 Deneme süresi: <span id="trialDays">3</span> gün kaldı — Abone Ol
+</div>
+
+<!-- PAGE: HESAPLA -->
+<div class="pg active" id="pg-hesap">
+<div class="ph">
+  <h1>İnşaat Maliyet Pro</h1>
+  <p>Malzeme · İşçilik · Proje · Bilinmeyen Gider</p>
+</div>
+
+<div class="mtabs">
+  <button class="mtab active" onclick="setMod(&#39;oto&#39;,this)">🏗️ Otomatik (m²)</button>
+  <button class="mtab" onclick="setMod(&#39;manuel&#39;,this)">🔧 Manuel Kalem</button>
+  <button class="mtab" onclick="setMod(&#39;karma&#39;,this)">⚡ Karma</button>
+</div>
+
+<!-- OTOMATİK -->
+<div id="m-oto">
+  <div class="card">
+    <div class="ch"><div class="cht">🏗️ Proje Bilgileri</div></div>
+    <div class="cb">
+      <div class="fr"><label class="fl">Proje Adı</label><input class="fi" id="o_adi" type="text" placeholder="Örn: Konut Projesi 2025"></div>
+      <div class="fr"><label class="fl">Yapı Türü</label>
+        <select class="fs" id="o_tur" onchange="updateOF()">
+          <option value="konut">🏠 Konut / Daire</option>
+          <option value="villa">🏡 Villa / Müstakil</option>
+          <option value="isyeri">🏢 İşyeri / Ofis</option>
+          <option value="depo">🏭 Depo / Sanayi</option>
+          <option value="cati">🔨 Çatı Tamiri</option>
+          <option value="tadilat">🔧 Tadilat</option>
+        </select></div>
+      <div class="r2">
+        <div class="fr"><label class="fl">Alan (m²)</label><input class="fi" id="o_alan" type="number" placeholder="150" min="1"></div>
+        <div class="fr" id="o_kr"><label class="fl">Kat Sayısı</label><input class="fi" id="o_kat" type="number" placeholder="2" min="1" max="20" value="1"></div>
+      </div>
+      <div class="r2">
+        <div class="fr"><label class="fl">Bölge</label>
+          <select class="fs" id="o_bolge">
+            <option value="1.0">İç Anadolu</option>
+            <option value="1.1">İstanbul / İzmir</option>
+            <option value="0.95" selected="">Gaziantep / G.Doğu</option>
+            <option value="1.05">Ankara / Bursa</option>
+            <option value="0.9">Küçük Şehir / Köy</option>
+          </select></div>
+        <div class="fr"><label class="fl">Kalite</label>
+          <select class="fs" id="o_kal">
+            <option value="ekonomik">💰 Ekonomik</option>
+            <option value="standart" selected="">⭐ Standart</option>
+            <option value="lux">✨ Lüks</option>
+          </select></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cht">⚙️ Dahil Edilecek İşler</div></div>
+    <div class="cb">
+      <div class="chk-grid">
+        <label class="ck"><input type="checkbox" id="c_temel" checked=""> 🏗️ Temel/Kazı</label>
+        <label class="ck"><input type="checkbox" id="c_kaba" checked=""> 🧱 Kaba Yapı</label>
+        <label class="ck"><input type="checkbox" id="c_cati" checked=""> 🏡 Çatı</label>
+        <label class="ck"><input type="checkbox" id="c_ince" checked=""> 🏠 İnce İşler</label>
+        <label class="ck"><input type="checkbox" id="c_tes" checked=""> 🔧 Tesisat</label>
+        <label class="ck"><input type="checkbox" id="c_dogalgaz" checked=""> 🔥 Doğalgaz</label>
+        <label class="ck"><input type="checkbox" id="c_elek" checked=""> ⚡ Elektrik</label>
+        <label class="ck"><input type="checkbox" id="c_mekanik" checked=""> ♨️ Mekanik</label>
+        <label class="ck"><input type="checkbox" id="c_yal" checked=""> 🌡️ Isı Yalıtımı</label>
+        <label class="ck"><input type="checkbox" id="c_boya"> 🎨 Boya/Badana</label>
+        <label class="ck"><input type="checkbox" id="c_mutfak"> 🍳 Mutfak/Dolap</label>
+        <label class="ck"><input type="checkbox" id="c_merdiven"> 🪜 Merdiven/Korkuluk</label>
+        <label class="ck"><input type="checkbox" id="c_asmatavan"> 🔲 Asma Tavan</label>
+        <label class="ck"><input type="checkbox" id="c_prj"> 📐 Proje/Ruhsat</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- BİLİNMEYEN GİDER -->
+  <div class="bilinmeyen-box">
+    <div class="bx-title">⚠️ Bilinmeyen / Öngörülemeyen Gider</div>
+    <div class="bx-opts">
+      <button class="bx-opt" onclick="setBG(0,this)">Yok (%0)</button>
+      <button class="bx-opt active" onclick="setBG(5,this)">%5</button>
+      <button class="bx-opt" onclick="setBG(6,this)">%6</button>
+      <button class="bx-opt" onclick="setBG(7,this)">%7</button>
+      <button class="bx-opt" onclick="setBG(8,this)">%8</button>
+    </div>
+    <div style="font-size:.67rem;color:var(--Y);margin-top:7px;line-height:1.4">
+      İnşaatlarda beklenmedik durumlar için toplam maliyetin %5–%8'i ayrılması önerilir.
+    </div>
+  </div>
+
+  <button class="hesapla-btn" onclick="hesaplaOto()">
+    <span class="hb-ic">🧮</span>
+    <span>HESAPLA — Malzeme + İşçilik + Proje</span>
+  </button>
+  <div id="oto_res"></div>
+</div>
+
+<!-- MANUEL -->
+<div id="m-manuel" style="display:none">
+  <div class="card">
+    <div class="ch"><div class="cht">📋 Proje Adı</div></div>
+    <div class="cb">
+      <input class="fi" id="m_adi" type="text" placeholder="Proje adı...">
+    </div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="cht">🧱 Malzemeler</div><button class="btn btn-G bsm" onclick="openPick(&#39;malzeme&#39;)">+ Ekle</button></div>
+    <div class="cb">
+      <div class="ibox">Fiyat listesinden malzeme seç → miktar gir → otomatik hesaplanır</div>
+      <div id="m_mal"></div>
+      <div id="m_me" style="text-align:center;padding:14px;color:var(--M);font-size:.78rem">Henüz malzeme eklenmedi</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="cht">👷 İşçilik</div><button class="btn btn-O bsm" onclick="openPick(&#39;iscilik&#39;)">+ Ekle</button></div>
+    <div class="cb">
+      <div id="m_isc"></div>
+      <div id="m_ie" style="text-align:center;padding:14px;color:var(--M);font-size:.78rem">Henüz işçilik kalemi eklenmedi</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ch"><div class="cht">📐 Proje / Müşavirlik</div><button class="btn bsm" style="background:var(--P);color:#fff" onclick="openPick(&#39;proje&#39;)">+ Ekle</button></div>
+    <div class="cb">
+      <div id="m_prj"></div>
+      <div id="m_pe" style="text-align:center;padding:14px;color:var(--M);font-size:.78rem">Henüz proje kalemi eklenmedi</div>
+    </div>
+  </div>
+  <div class="bilinmeyen-box" style="margin-bottom:10px">
+    <div class="bx-title">⚠️ Bilinmeyen Gider</div>
+    <div class="bx-opts">
+      <button class="bx-opt" onclick="setMBG(0,this)">%0</button>
+      <button class="bx-opt active" onclick="setMBG(5,this)">%5</button>
+      <button class="bx-opt" onclick="setMBG(6,this)">%6</button>
+      <button class="bx-opt" onclick="setMBG(7,this)">%7</button>
+      <button class="bx-opt" onclick="setMBG(8,this)">%8</button>
+    </div>
+  </div>
+  <div id="m_res"></div>
+  <div style="padding:4px 14px;display:flex;gap:8px">
+    <button class="btn btn-out" style="flex:1" onclick="manuelHesapla()">🧮 Toplamı Hesapla</button>
+    <button class="btn btn-O" style="flex:1" onclick="manuelExcel()">📥 Excel</button>
+  </div>
+  <div style="padding:4px 14px 4px"><button class="btn btn-G" onclick="manuelKaydet()">💾 Projeyi Kaydet</button></div>
+</div>
+
+<!-- KARMA -->
+<div id="m-karma" style="display:none">
+  <div class="card">
+    <div class="ch"><div class="cht">⚡ Karma Hesaplama</div></div>
+    <div class="cb">
+      <div class="ibox">m² bazlı temel hesap yap, sonra istediğin kalemleri ekle/düzenle</div>
+      <div class="fr"><label class="fl">Proje Adı</label><input class="fi" id="k_adi" type="text" placeholder="Proje adı..."></div>
+      <div class="r2">
+        <div class="fr"><label class="fl">Alan (m²)</label><input class="fi" id="k_alan" type="number" placeholder="120" min="1"></div>
+        <div class="fr"><label class="fl">Kat</label><input class="fi" id="k_kat" type="number" placeholder="2" min="1" value="1"></div>
+      </div>
+      <div class="r2">
+        <div class="fr"><label class="fl">Yapı Türü</label>
+          <select class="fs" id="k_tur">
+            <option value="konut">Konut</option><option value="villa">Villa</option>
+            <option value="isyeri">İşyeri</option><option value="depo">Depo</option><option value="tadilat">Tadilat</option>
+          </select></div>
+        <div class="fr"><label class="fl">Kalite</label>
+          <select class="fs" id="k_kal">
+            <option value="ekonomik">Ekonomik</option><option value="standart" selected="">Standart</option><option value="lux">Lüks</option>
+          </select></div>
+      </div>
+      <div class="r2">
+        <div class="fr"><label class="fl">Bölge</label>
+          <select class="fs" id="k_bolge">
+            <option value="1.0">İç Anadolu</option><option value="1.1">İstanbul/İzmir</option>
+            <option value="0.95" selected="">Gaziantep/G.Doğu</option><option value="1.05">Ankara/Bursa</option><option value="0.9">Küçük Şehir</option>
+          </select></div>
+        <div class="fr"><label class="fl">Bilinmeyen Gider</label>
+          <select class="fs" id="k_bg">
+            <option value="0">%0 (Yok)</option><option value="5" selected="">%5</option>
+            <option value="6">%6</option><option value="7">%7</option><option value="8">%8</option>
+          </select></div>
+      </div>
+      <button class="hesapla-btn" style="margin:0 0 4px" onclick="karmaTemel()">
+        <span class="hb-ic">📐</span><span>Temel Hesabı Oluştur</span>
+      </button>
+    </div>
+  </div>
+  <div id="karma_ek" style="display:none">
+    <div class="card">
+      <div class="ch">
+        <div class="cht">➕ Ek Kalemler</div>
+        <div style="display:flex;gap:4px">
+          <button class="btn btn-G bsm" onclick="openPick(&#39;k_m&#39;)">+Mal.</button>
+          <button class="btn btn-O bsm" onclick="openPick(&#39;k_i&#39;)">+İşç.</button>
+          <button class="btn bsm" style="background:var(--P);color:#fff" onclick="openPick(&#39;k_p&#39;)">+Prj.</button>
+        </div>
+      </div>
+      <div class="cb">
+        <div id="k_ekler"></div>
+        <div id="k_empty" style="text-align:center;padding:12px;color:var(--M);font-size:.76rem">İsteğe bağlı ek kalemler ekle</div>
+      </div>
+    </div>
+    <div id="k_res"></div>
+    <div style="padding:4px 14px;display:flex;gap:8px">
+      <button class="btn btn-out" style="flex:1" onclick="karmaHesapla()">🧮 Hesapla</button>
+      <button class="btn btn-O" style="flex:1" onclick="karmaExcel()">📥 Excel</button>
+    </div>
+    <div style="padding:4px 14px 4px"><button class="btn btn-G" onclick="karmaKaydet()">💾 Kaydet</button></div>
+  </div>
+</div>
+</div><!-- end hesap -->
+
+<!-- PAGE: FİYATLAR -->
+<div class="pg" id="pg-fiyat">
+  <div class="ph"><h1>Fiyat Listesi</h1><p>Mart 2025 · Malzeme · İşçilik · Proje Giderleri</p></div>
+  <div class="ptabs" id="ptabs"><button class="pcat" style="background:var(--B);border-color:var(--B);color:#fff" onclick="setFMod(&#39;malzeme&#39;)">🧱 Malzeme</button><button class="pcat" style="color:var(--O);border-color:var(--O)" onclick="setFMod(&#39;iscilik&#39;)">👷 İşçilik</button><button class="pcat" style="color:var(--P);border-color:var(--P)" onclick="setFMod(&#39;proje&#39;)">📐 Proje</button><span style="width:1px;background:var(--bd);margin:3px 3px;flex-shrink:0;display:inline-block"></span><button class="pcat active" onclick="setPCat(&#39;Çimento &amp; Bağlayıcı&#39;,this)">Çimento &amp; Bağlayıcı</button><button class="pcat" onclick="setPCat(&#39;Agrega&#39;,this)">Agrega</button><button class="pcat" onclick="setPCat(&#39;Demir &amp; Çelik&#39;,this)">Demir &amp; Çelik</button><button class="pcat" onclick="setPCat(&#39;Beton&#39;,this)">Beton</button><button class="pcat" onclick="setPCat(&#39;Duvar&#39;,this)">Duvar</button><button class="pcat" onclick="setPCat(&#39;Döşeme &amp; Kaplama&#39;,this)">Döşeme &amp; Kaplama</button><button class="pcat" onclick="setPCat(&#39;Mermer &amp; Taş&#39;,this)">Mermer &amp; Taş</button><button class="pcat" onclick="setPCat(&#39;Merdiven &amp; Korkuluk&#39;,this)">Merdiven &amp; Korkuluk</button><button class="pcat" onclick="setPCat(&#39;Asma Tavan&#39;,this)">Asma Tavan</button><button class="pcat" onclick="setPCat(&#39;Yalıtım &amp; Su&#39;,this)">Yalıtım &amp; Su</button><button class="pcat" onclick="setPCat(&#39;Çatı&#39;,this)">Çatı</button><button class="pcat" onclick="setPCat(&#39;Boya&#39;,this)">Boya</button><button class="pcat" onclick="setPCat(&#39;Tesisat&#39;,this)">Tesisat</button><button class="pcat" onclick="setPCat(&#39;Doğalgaz&#39;,this)">Doğalgaz</button><button class="pcat" onclick="setPCat(&#39;Elektrik&#39;,this)">Elektrik</button><button class="pcat" onclick="setPCat(&#39;Armatür &amp; Lamba&#39;,this)">Armatür &amp; Lamba</button><button class="pcat" onclick="setPCat(&#39;Mekanik&#39;,this)">Mekanik</button><button class="pcat" onclick="setPCat(&#39;Doğrama&#39;,this)">Doğrama</button><button class="pcat" onclick="setPCat(&#39;Mutfak &amp; Dolap&#39;,this)">Mutfak &amp; Dolap</button></div>
+  <div class="plist" id="plist">
+    <div class="pi">
+      <div class="pi-ic">🏗️</div>
+      <div class="pi-info"><div class="pi-name">Portland Çimentosu 42.5R</div><div class="pi-unit">/ ton</div></div>
+      <div class="pi-right">
+        <div class="pi-price" style="color:var(--B)">4.200–5.200 ₺</div>
+        <div class="pi-sub">🧱 Mart 2025</div>
+      </div>
+    </div>
+    <div class="pi">
+      <div class="pi-ic">🏗️</div>
+      <div class="pi-info"><div class="pi-name">Beyaz Çimento 52.5</div><div class="pi-unit">/ torba 50kg</div></div>
+      <div class="pi-right">
+        <div class="pi-price" style="color:var(--B)">180–230 ₺</div>
+        <div class="pi-sub">🧱 Mart 2025</div>
+      </div>
+    </div>
+    <div class="pi">
+      <div class="pi-ic">🏗️</div>
+      <div class="pi-info"><div class="pi-name">Alçı Sıva</div><div class="pi-unit">/ torba 25kg</div></div>
+      <div class="pi-right">
+        <div class="pi-price" style="color:var(--B)">80–130 ₺</div>
+        <div class="pi-sub">🧱 Mart 2025</div>
+      </div>
+    </div>
+    <div class="pi">
+      <div class="pi-ic">🏗️</div>
+      <div class="pi-info"><div class="pi-name">Kireç (Söndürülmüş)</div><div class="pi-unit">/ torba 25kg</div></div>
+      <div class="pi-right">
+        <div class="pi-price" style="color:var(--B)">60–90 ₺</div>
+        <div class="pi-sub">🧱 Mart 2025</div>
+      </div>
+    </div></div>
+</div>
+
+<!-- PAGE: PROJELERİM -->
+<div class="pg" id="pg-projeler">
+  <div class="ph"><h1>Projelerim</h1><p>Kaydettiğin tüm hesaplamalar</p></div>
+  <div id="pj_list"></div>
+</div>
+
+<div class="pg" id="pg-projeler">
+  <div class="ph"><h1>Projelerim</h1><p>Kaydettiğin tüm hesaplamalar</p></div>
+  <div id="pj_list"></div>
+</div>
+
+<!-- PAGE: YÖNETİM / ADMİN -->
+<div class="pg" id="pg-admin">
+  <div class="ph" style="background:linear-gradient(155deg,#1a1a14 65%,#3d3d2a)">
+    <h1>⚙️ Yönetim Paneli</h1>
+    <p>Fiyatları güncelle · Verileri yönet</p>
+  </div>
+
+  <!-- Şifre koruması -->
+  <div id="admin_lock" class="card" style="margin-top:16px">
+    <div class="ch"><div class="cht">🔐 Yönetici Girişi</div></div>
+    <div class="cb">
+      <div class="fr"><label class="fl">Yönetici Şifresi</label>
+        <input class="fi" type="password" id="admin_pw" placeholder="Şifrenizi girin" onkeydown="if(event.key===&#39;Enter&#39;)adminGiris()">
+      </div>
+      <button class="hesapla-btn" style="margin:0" onclick="adminGiris()">🔓 Giriş Yap</button>
+      <p style="font-size:.68rem;color:var(--M);margin-top:8px;text-align:center">Varsayılan şifre: <strong>octo2026</strong> — lütfen değiştirin</p>
+    </div>
+  </div>
+
+  <!-- Admin içeriği (şifre sonrası açılır) -->
+  <div id="admin_content" style="display:none">
+
+    <!-- Şifre Değiştir -->
+    <div class="card">
+      <div class="ch"><div class="cht">🔑 Şifre Değiştir</div></div>
+      <div class="cb">
+        <div class="fr"><label class="fl">Yeni Şifre</label><input class="fi" type="password" id="admin_yeni_pw" placeholder="En az 6 karakter"></div>
+        <div class="fr"><label class="fl">Şifre Tekrar</label><input class="fi" type="password" id="admin_yeni_pw2" placeholder="Tekrar girin"></div>
+        <button class="btn btn-B bsm" onclick="adminSifreDegistir()">💾 Şifreyi Güncelle</button>
+      </div>
+    </div>
+
+    <!-- Fiyat Güncelleme -->
+    <div class="card">
+      <div class="ch"><div class="cht">💹 Birim Fiyat Güncelleme</div></div>
+      <div class="cb">
+        <p style="font-size:.75rem;color:var(--M);margin-bottom:12px">Piyasa koşullarına göre temel m² fiyatlarını buradan güncelleyin. Tüm hesaplamalar otomatik güncellenir.</p>
+
+        <div style="font-size:.72rem;font-weight:700;color:var(--G);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px">🏠 Konut Fiyatları (₺/m²)</div>
+        <div class="r2">
+          <div class="fr"><label class="fl">Ekonomik</label><input class="fi" type="number" id="fp_konut_eko" placeholder="18000"></div>
+          <div class="fr"><label class="fl">Standart</label><input class="fi" type="number" id="fp_konut_std" placeholder="24000"></div>
+        </div>
+        <div class="fr"><label class="fl">Lüks</label><input class="fi" type="number" id="fp_konut_lux" placeholder="38000"></div>
+
+        <div style="font-size:.72rem;font-weight:700;color:var(--B);margin:12px 0 8px;text-transform:uppercase;letter-spacing:.8px">🏥 Hastane Fiyatları (₺/m²)</div>
+        <div class="r2">
+          <div class="fr"><label class="fl">Ekonomik</label><input class="fi" type="number" id="fp_hast_eko" placeholder="27000"></div>
+          <div class="fr"><label class="fl">Standart</label><input class="fi" type="number" id="fp_hast_std" placeholder="34000"></div>
+        </div>
+        <div class="fr"><label class="fl">Lüks</label><input class="fi" type="number" id="fp_hast_lux" placeholder="52000"></div>
+
+        <div style="font-size:.72rem;font-weight:700;color:var(--O);margin:12px 0 8px;text-transform:uppercase;letter-spacing:.8px">🏭 Fabrika Fiyatları (₺/m²)</div>
+        <div class="r2">
+          <div class="fr"><label class="fl">Hafif Sanayi</label><input class="fi" type="number" id="fp_fab_hafif" placeholder="8000"></div>
+          <div class="fr"><label class="fl">Ağır Sanayi</label><input class="fi" type="number" id="fp_fab_agir" placeholder="14000"></div>
+        </div>
+
+        <div style="font-size:.72rem;font-weight:700;color:var(--P);margin:12px 0 8px;text-transform:uppercase;letter-spacing:.8px">🔩 Prefabrik Fiyatları (₺/m²)</div>
+        <div class="r2">
+          <div class="fr"><label class="fl">Sandviç Panel</label><input class="fi" type="number" id="fp_pref_sandvic" placeholder="4500"></div>
+          <div class="fr"><label class="fl">Hafif Çelik</label><input class="fi" type="number" id="fp_pref_celik" placeholder="6000"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+          <button class="btn btn-B bsm" onclick="adminFiyatKaydet()">💾 Fiyatları Kaydet</button>
+          <button class="btn btn-out bsm" onclick="adminFiyatSifirla()">↩️ Varsayılana Dön</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Güncelleme Tarihi -->
+    <div class="card">
+      <div class="ch"><div class="cht">📅 Son Güncelleme Bilgisi</div></div>
+      <div class="cb">
+        <div id="admin_guncelleme_bilgi" style="font-size:.8rem;color:var(--M);line-height:1.8"></div>
+        <button class="btn btn-out bsm" style="margin-top:10px" onclick="adminNotGuncelle()">📝 Güncelleme Notu Ekle</button>
+      </div>
+    </div>
+
+    <!-- Veri Yönetimi -->
+    <div class="card">
+      <div class="ch"><div class="cht">🗄️ Veri Yönetimi</div></div>
+      <div class="cb">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <button class="btn btn-out bsm" onclick="adminVeriyiDisa()">📤 Projeleri Dışa Aktar</button>
+          <button class="btn btn-out bsm" onclick="adminVeriyiIce()">📥 Projeleri İçe Aktar</button>
+        </div>
+        <div style="margin-top:8px">
+          <button class="btn bsm" style="width:100%;background:#b03030;color:#fff;border:none" onclick="adminTumVeriSil()">🗑️ Tüm Verileri Temizle</button>
+        </div>
+        <p style="font-size:.68rem;color:var(--M);margin-top:6px">⚠️ Temizle işlemi geri alınamaz.</p>
+      </div>
+    </div>
+
+    <div style="padding:0 14px 14px">
+      <button class="btn btn-out bsm" style="width:100%" onclick="adminCikis()">🚪 Oturumu Kapat</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: HAKKINDA -->
+<div class="pg" id="pg-hakkinda">
+  <div class="ph" style="background:linear-gradient(155deg,#0f2d1f 65%,#1c6b40)">
+    <h1>ℹ️ Hakkında</h1>
+    <p>İnşaat Maliyet Pro v3.0</p>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="ch"><div class="cht">🏗️ Uygulama Hakkında</div></div>
+    <div class="cb" style="font-size:.82rem;line-height:1.8;color:var(--M)">
+      <p><strong style="color:var(--T)">İnşaat Maliyet Pro</strong>, Türkiye inşaat sektörüne özel geliştirilmiş profesyonel maliyet hesaplama uygulamasıdır.</p>
+      <br>
+      <p>Konut, villa, işyeri, hastane, okul, fabrika ve prefabrik yapı türlerinde; malzeme, işçilik ve proje giderlerini 2026 İstanbul piyasa fiyatlarıyla hesaplar.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cht">✨ Özellikler</div></div>
+    <div class="cb">
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:.8rem">
+        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:1.1rem">🧮</span><span>Konut, villa, işyeri, depo maliyet hesabı</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:1.1rem">🏥</span><span>Hastane, okul, fabrika, prefabrik yapı hesabı</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:1.1rem">💹</span><span>2026 güncel İstanbul piyasa fiyatları</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:1.1rem">📁</span><span>Sınırsız proje kaydetme ve geçmiş</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:1.1rem">📄</span><span>PDF rapor oluşturma</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:1.1rem">🔄</span><span>Aylık otomatik fiyat güncellemeleri</span></div>
+        <div style="display:flex;gap:10px;align-items:center"><span style="font-size:1.1rem">📱</span><span>Çevrimdışı çalışma (PWA)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cht">💰 Abonelik</div></div>
+    <div class="cb" style="font-size:.82rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd)">
+        <span>Aylık Plan</span><strong>199 ₺ / ay</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd)">
+        <span>Yıllık Plan</span><strong>999 ₺ / yıl</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0">
+        <span>Ücretsiz Deneme</span><strong>3 Gün</strong>
+      </div>
+      <div id="hk_abone_durum" style="margin-top:10px;padding:10px;background:var(--GL);border-radius:8px;font-size:.75rem;color:var(--G);font-weight:600;text-align:center"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cht">📋 Sürüm Notları</div></div>
+    <div class="cb" style="font-size:.78rem;color:var(--M);line-height:1.8">
+      <div style="margin-bottom:10px">
+        <strong style="color:var(--G)">v3.0</strong> — Mayıs 2026<br>
+        • Hastane, okul, fabrika, prefabrik yapı hesaplama eklendi<br>
+        • 3 günlük deneme sistemi ve abonelik eklendi<br>
+        • Yönetim paneli eklendi
+      </div>
+      <div style="margin-bottom:10px">
+        <strong style="color:var(--T)">v2.0</strong> — Ocak 2026<br>
+        • Fiyat listesi sayfası eklendi<br>
+        • Proje kaydetme özelliği eklendi
+      </div>
+      <div>
+        <strong style="color:var(--M)">v1.0</strong> — Ekim 2025<br>
+        • İlk sürüm yayınlandı
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cht">📞 İletişim &amp; Destek</div></div>
+    <div class="cb" style="font-size:.82rem;line-height:2;color:var(--M)">
+      <div>🌐 insaatmaliyetpro.com</div>
+      <div>📧 destek@insaatmaliyetpro.com</div>
+      <div>📍 Türkiye</div>
+      <br>
+      <p style="font-size:.72rem">© 2026 İnşaat Maliyet Pro. Tüm hakları saklıdır.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: ÖZEL YAPILAR -->
+<div class="pg" id="pg-ozel">
+  <div class="ph" style="background:linear-gradient(155deg,#1a3d6b 65%,#2a5fa0)">
+    <h1>🏥 Özel Yapı Hesaplama</h1>
+    <p>Hastane · Okul · Fabrika · Prefabrik</p>
+  </div>
+
+  <!-- Yapı Tipi Seçimi -->
+  <div style="padding:12px 14px 0">
+    <div class="oz-types">
+      <button class="oz-type active" onclick="setOzType(&#39;hastane&#39;,this)">
+        <span class="oz-ic">🏥</span>
+        <span class="oz-lb">Hastane &amp; Sağlık</span>
+      </button>
+      <button class="oz-type" onclick="setOzType(&#39;okul&#39;,this)">
+        <span class="oz-ic">🏫</span>
+        <span class="oz-lb">Okul &amp; Eğitim</span>
+      </button>
+      <button class="oz-type" onclick="setOzType(&#39;fabrika&#39;,this)">
+        <span class="oz-ic">🏭</span>
+        <span class="oz-lb">Fabrika &amp; Tesis</span>
+      </button>
+      <button class="oz-type" onclick="setOzType(&#39;prefabrik&#39;,this)">
+        <span class="oz-ic">🔩</span>
+        <span class="oz-lb">Prefabrik Yapı</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Açıklama Bandı -->
+  <div class="oz-desc-band" id="oz_descBand">
+    <span id="oz_descText">Hastane yapıları: yüksek teknik altyapı, özel mekanik ve tıbbi gaz tesisatı gerektiren kompleks yapılardır.</span>
+  </div>
+
+  <!-- Giriş Formu -->
+  <div class="card">
+    <div class="ch"><div class="cht" id="oz_formTitle">🏥 Hastane Proje Bilgileri</div></div>
+    <div class="cb">
+      <div class="fr"><label class="fl">Proje Adı</label><input class="fi" id="oz_adi" type="text" placeholder="Örn: Devlet Hastanesi 2025"></div>
+      <div class="r2">
+        <div class="fr"><label class="fl">Brüt Alan (m²)</label><input class="fi" id="oz_alan" type="number" placeholder="5000" min="1"></div>
+        <div class="fr"><label class="fl">Kat Sayısı</label><input class="fi" id="oz_kat" type="number" placeholder="4" min="1" max="30" value="3"></div>
+      </div>
+      <div class="r2">
+        <div class="fr"><label class="fl">Bölge</label>
+          <select class="fs" id="oz_bolge">
+            <option value="1.0">İç Anadolu</option>
+            <option value="1.15">İstanbul / İzmir</option>
+            <option value="0.95" selected="">Gaziantep / G.Doğu</option>
+            <option value="1.08">Ankara / Bursa</option>
+            <option value="0.9">Küçük Şehir / Köy</option>
+          </select>
+        </div>
+        <div class="fr"><label class="fl">Kalite Sınıfı</label>
+          <select class="fs" id="oz_kal">
+            <option value="ekonomik">Ekonomik</option>
+            <option value="standart" selected="">Standart</option>
+            <option value="lux">Lüx / A+</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Hastane özel alanlar -->
+      <div id="oz_extra_hastane">
+        <div class="r2">
+          <div class="fr"><label class="fl">Yatak Kapasitesi</label><input class="fi" id="oz_yatak" type="number" placeholder="100" min="10"></div>
+          <div class="fr"><label class="fl">Ameliyathane Sayısı</label><input class="fi" id="oz_ameliyat" type="number" placeholder="4" min="0" value="0"></div>
+        </div>
+        <div class="fr"><label class="fl">Tıbbi Gaz Tesisatı</label>
+          <select class="fs" id="oz_tibbiGaz">
+            <option value="1.0">Yok / Minimal</option>
+            <option value="1.15" selected="">Standart (O₂, Vakum)</option>
+            <option value="1.30">Tam Sistem (ICU, OR dahil)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Okul özel alanlar -->
+      <div id="oz_extra_okul" style="display:none">
+        <div class="r2">
+          <div class="fr"><label class="fl">Derslik Sayısı</label><input class="fi" id="oz_derslik" type="number" placeholder="24" min="1"></div>
+          <div class="fr"><label class="fl">Spor Salonu</label>
+            <select class="fs" id="oz_spor">
+              <option value="0">Yok</option>
+              <option value="1">Var</option>
+            </select>
+          </div>
+        </div>
+        <div class="fr"><label class="fl">Okul Türü</label>
+          <select class="fs" id="oz_okulTur">
+            <option value="ilkokul">İlkokul / Ortaokul</option>
+            <option value="lise">Lise</option>
+            <option value="universite">Üniversite / Yüksekokul</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fabrika özel alanlar -->
+      <div id="oz_extra_fabrika" style="display:none">
+        <div class="r2">
+          <div class="fr"><label class="fl">Üretim Alanı (m²)</label><input class="fi" id="oz_uretim" type="number" placeholder="3000" min="100"></div>
+          <div class="fr"><label class="fl">Vinç Kapasitesi (ton)</label><input class="fi" id="oz_vinc" type="number" placeholder="0" min="0" value="0"></div>
+        </div>
+        <div class="fr"><label class="fl">Tesis Türü</label>
+          <select class="fs" id="oz_fabrikaTur">
+            <option value="hafif">Hafif Sanayi (tekstil, gıda)</option>
+            <option value="orta">Orta Sanayi (montaj, depolama)</option>
+            <option value="agir">Ağır Sanayi (çelik, kimya)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Prefabrik özel alanlar -->
+      <div id="oz_extra_prefabrik" style="display:none">
+        <div class="fr"><label class="fl">Prefabrik Sistem Tipi</label>
+          <select class="fs" id="oz_prefTip">
+            <option value="hafif_celik">Hafif Çelik Konstrüksiyon</option>
+            <option value="agir_prefab">Ağır Prefabrik Beton</option>
+            <option value="sandvic">Sandviç Panel Sistem</option>
+            <option value="modüler">Modüler Konteyner Yapı</option>
+          </select>
+        </div>
+        <div class="r2">
+          <div class="fr"><label class="fl">İskelet Yüksekliği (m)</label><input class="fi" id="oz_yukseklik" type="number" placeholder="6" min="3" max="20" value="6"></div>
+          <div class="fr"><label class="fl">Çatı Tipi</label>
+            <select class="fs" id="oz_catiTip">
+              <option value="sac">Trapez Sac</option>
+              <option value="sandvic">Sandviç Panel</option>
+              <option value="beton">Betonarme</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Özel Kalemler -->
+  <div class="card">
+    <div class="ch">
+      <div class="cht">⚙️ Dahil Edilecek Sistemler</div>
+    </div>
+    <div class="cb">
+      <div class="oz-chk-grid" id="oz_sistemler"><label class="oz-ck"><input type="checkbox" id="oz_yangın" checked="">🔥 Yangın Sistemi</label><label class="oz-ck"><input type="checkbox" id="oz_asansor" checked="">🛗 Asansör / Lift</label><label class="oz-ck"><input type="checkbox" id="oz_jenerat" checked="">⚡ Jeneratör</label><label class="oz-ck"><input type="checkbox" id="oz_hvac" checked="">❄️ Klima / HVAC</label><label class="oz-ck"><input type="checkbox" id="oz_hemzemin" checked="">♿ Engelli Erişim</label><label class="oz-ck"><input type="checkbox" id="oz_otomasyon" checked="">🖥️ BMS Otomasyon</label></div>
+    </div>
+  </div>
+
+  <!-- Hesapla Butonu -->
+  <button class="hesapla-btn" onclick="hesaplaOzel()">
+    <span class="hb-ic">🔬</span> Özel Yapı Maliyetini Hesapla
+  </button>
+
+  <!-- Sonuçlar -->
+  <div id="oz_result" style="display:none">
+    <div class="banner" id="oz_banner">
+      <span class="ban-ic">🏗️</span>
+      <div><div class="ban-v" id="oz_toplamTxt">—</div><div class="ban-l">Toplam Tahmini Maliyet</div></div>
+    </div>
+    <div class="minis" id="oz_minis"></div>
+    <div class="card" style="margin-top:2px">
+      <div class="ch"><div class="cht">📊 Kalem Detayı</div></div>
+      <div class="cb" style="padding:0"><div id="oz_kalemTable"></div></div>
+    </div>
+    <div class="card" style="margin-top:2px">
+      <div class="ch"><div class="cht">⚠️ Özel Yapı Notları</div></div>
+      <div class="cb"><div id="oz_notlar" style="font-size:.78rem;color:#555;line-height:1.6"></div></div>
+    </div>
+    <div style="padding:0 14px 14px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <button class="btn btn-B bsm" onclick="kaydetOzel()">💾 Kaydet</button>
+      <button class="btn btn-out bsm" onclick="pdfOzel()">📄 PDF</button>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <button class="nb active" onclick="goPage(&#39;hesap&#39;,this)"><span class="nb-i">🧮</span>Hesapla</button>
+  <button class="nb" onclick="goPage(&#39;ozel&#39;,this)"><span class="nb-i">🏥</span>Özel Yapı</button>
+  <button class="nb" onclick="goPage(&#39;fiyat&#39;,this)"><span class="nb-i">💹</span>Fiyatlar</button>
+  <button class="nb" onclick="goPage(&#39;projeler&#39;,this)"><span class="nb-i">📁</span>Projelerim</button>
+  <button class="nb" onclick="goPage(&#39;admin&#39;,this)"><span class="nb-i">⚙️</span>Yönetim</button>
+  <button class="nb" onclick="goPage(&#39;hakkinda&#39;,this)"><span class="nb-i">ℹ️</span>Hakkında</button>
+</nav>
+
+<!-- PICK MODAL -->
+<div class="ov hid" id="pickModal" onclick="closePick(event)">
+  <div class="mbox">
+    <div class="mh"></div>
+    <div class="mt" id="pick_title">Seç</div>
+    <div class="mct" id="pick_cats"></div>
+    <div id="pick_items"></div>
+  </div>
+</div>
+
+<!-- QTY MODAL -->
+<div class="qov hid" id="qtyModal">
+  <div class="qbox">
+    <div class="qt" id="q_t">Miktar</div>
+    <div class="qs" id="q_s"></div>
+    <div class="fr">
+      <label class="fl" id="q_l">Miktar</label>
+      <div class="ig"><input class="fi" id="q_m" type="number" min="0.001" step="any" placeholder="0"><span class="sfx" id="q_b">—</span></div>
+    </div>
+    <div class="fr">
+      <label class="fl">Birim Fiyat (₺) — boş = ortalama fiyat</label>
+      <input class="fi" id="q_f" type="number" min="0" placeholder="Opsiyonel">
+    </div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn btn-out" style="flex:1;padding:10px" onclick="closeQty()">İptal</button>
+      <button class="btn btn-G" style="flex:1;padding:10px" onclick="confirmQty()">✓ Ekle</button>
+    </div>
+  </div>
+</div>
+
+<!-- DETAY MODAL -->
+<div class="dov hid" id="detModal" onclick="if(event.target===this)this.classList.add(&#39;hid&#39;)">
+  <div class="mbox"><div class="mh"></div><div class="mt" id="det_t"></div><div id="det_c"></div></div>
+</div>
+
+<script>
+// ============================================================
+// VERİ
+// ============================================================
+const MAL={
+  "Çimento & Bağlayıcı":[
+    {id:"c1",ad:"Portland Çimentosu 42.5R",birim:"ton",min:4200,max:5200,ic:"🏗️"},
+    {id:"c2",ad:"Beyaz Çimento 52.5",birim:"torba 50kg",min:180,max:230,ic:"🏗️"},
+    {id:"c3",ad:"Alçı Sıva",birim:"torba 25kg",min:80,max:130,ic:"🏗️"},
+    {id:"c4",ad:"Kireç (Söndürülmüş)",birim:"torba 25kg",min:60,max:90,ic:"🏗️"},
+  ],
+  "Agrega":[
+    {id:"a1",ad:"İnşaat Kumu",birim:"m³",min:350,max:550,ic:"⛏️"},
+    {id:"a2",ad:"İnce Kum (Sıva)",birim:"m³",min:300,max:450,ic:"⛏️"},
+    {id:"a3",ad:"Dere Çakılı 0-25mm",birim:"m³",min:400,max:600,ic:"⛏️"},
+    {id:"a4",ad:"Kırma Taş 0-25mm",birim:"m³",min:450,max:650,ic:"⛏️"},
+  ],
+  "Demir & Çelik":[
+    {id:"d1",ad:"İnşaat Demiri Φ8",birim:"ton",min:26000,max:30000,ic:"🔩"},
+    {id:"d2",ad:"İnşaat Demiri Φ10",birim:"ton",min:25500,max:29500,ic:"🔩"},
+    {id:"d3",ad:"İnşaat Demiri Φ12",birim:"ton",min:25000,max:29000,ic:"🔩"},
+    {id:"d4",ad:"İnşaat Demiri Φ16",birim:"ton",min:25500,max:29500,ic:"🔩"},
+    {id:"d5",ad:"İnşaat Demiri Φ20",birim:"ton",min:26000,max:30000,ic:"🔩"},
+    {id:"d6",ad:"HEA100 Profil Çelik",birim:"ton",min:35000,max:42000,ic:"🔩"},
+  ],
+  "Beton":[
+    {id:"b1",ad:"Hazır Beton C20/25",birim:"m³",min:2500,max:3200,ic:"🏗️"},
+    {id:"b2",ad:"Hazır Beton C25/30",birim:"m³",min:2800,max:3800,ic:"🏗️"},
+    {id:"b3",ad:"Hazır Beton C30/37",birim:"m³",min:3000,max:4000,ic:"🏗️"},
+  ],
+  "Duvar":[
+    {id:"du1",ad:"Delikli Tuğla",birim:"adet",min:3.5,max:5.5,ic:"🧱"},
+    {id:"du2",ad:"Ytong / Gaz Beton",birim:"m³",min:2800,max:3600,ic:"🧱"},
+    {id:"du3",ad:"Bims Blok",birim:"adet",min:15,max:22,ic:"🧱"},
+    {id:"du4",ad:"Alçıpan 12.5mm",birim:"m²",min:90,max:140,ic:"🧱"},
+  ],
+  "Döşeme & Kaplama":[
+    {id:"k1",ad:"Seramik Zemin 40x40",birim:"m²",min:150,max:320,ic:"🏠"},
+    {id:"k2",ad:"Porselen Karo 60x60",birim:"m²",min:200,max:520,ic:"🏠"},
+    {id:"k3",ad:"Laminant Parke",birim:"m²",min:150,max:380,ic:"🏠"},
+    {id:"k4",ad:"Meşe Masif Parke",birim:"m²",min:800,max:1600,ic:"🏠"},
+    {id:"k5",ad:"Mermer Döşeme (Afyon Beyaz)",birim:"m²",min:400,max:950,ic:"🏠"},
+    {id:"k6",ad:"Granit Zemin",birim:"m²",min:350,max:800,ic:"🏠"},
+  ],
+  "Mermer & Taş":[
+    {id:"m1",ad:"Mutfak Mermer Tezgahı 2cm",birim:"metre",min:1200,max:2800,ic:"🍳"},
+    {id:"m2",ad:"Mutfak Mermer Tezgahı 3cm",birim:"metre",min:1600,max:3500,ic:"🍳"},
+    {id:"m3",ad:"Mutfak Granit Tezgah 2cm",birim:"metre",min:1500,max:3200,ic:"🍳"},
+    {id:"m4",ad:"Denizlik Mermeri (Afyon Beyaz)",birim:"metre",min:800,max:1600,ic:"🏛️"},
+    {id:"m5",ad:"Denizlik Mermeri (Traverten)",birim:"metre",min:600,max:1200,ic:"🏛️"},
+    {id:"m6",ad:"Bina Merdiven Basamağı (Mermer)",birim:"adet",min:600,max:1400,ic:"🪜"},
+    {id:"m7",ad:"Bina Merdiven Basamağı (Granit)",birim:"adet",min:500,max:1100,ic:"🪜"},
+    {id:"m8",ad:"Merdiven Sahanlık Mermeri",birim:"m²",min:500,max:1100,ic:"🪜"},
+    {id:"m9",ad:"Banyo Tezgahı Mermeri",birim:"metre",min:900,max:1800,ic:"🚿"},
+    {id:"m10",ad:"Merdiven Seramik Kaplama",birim:"m²",min:150,max:380,ic:"🪜"},
+  ],
+  "Merdiven & Korkuluk":[
+    {id:"mr1",ad:"Çelik Korkuluk (Boya Boyalı)",birim:"metre",min:800,max:1800,ic:"🪜"},
+    {id:"mr2",ad:"Paslanmaz Çelik Korkuluk",birim:"metre",min:1500,max:4000,ic:"🪜"},
+    {id:"mr3",ad:"Alüminyum Korkuluk",birim:"metre",min:1200,max:3000,ic:"🪜"},
+    {id:"mr4",ad:"Cam Balustrat (Şeffaf Cam)",birim:"metre",min:2500,max:6000,ic:"🪟"},
+    {id:"mr5",ad:"Balkon Korkuluğu (Demir Profil)",birim:"metre",min:700,max:1600,ic:"🏠"},
+    {id:"mr6",ad:"Balkon Korkuluğu (Alüminyum)",birim:"metre",min:1100,max:2800,ic:"🏠"},
+    {id:"mr7",ad:"Ahşap Korkuluk (Merdiven)",birim:"metre",min:1200,max:3500,ic:"🪵"},
+    {id:"mr8",ad:"Spiral Merdiven (Çelik, m²)",birim:"m²",min:3000,max:8000,ic:"🪜"},
+  ],
+  "Asma Tavan":[
+    {id:"at1",ad:"Alçıpan Asma Tavan (Düz)",birim:"m²",min:200,max:380,ic:"🔲"},
+    {id:"at2",ad:"Alçıpan Asma Tavan (Kademeli)",birim:"m²",min:280,max:500,ic:"🔲"},
+    {id:"at3",ad:"Alçıpan Asma Tavan (Kutu Tavan)",birim:"m²",min:350,max:650,ic:"🔲"},
+    {id:"at4",ad:"Kartonpiyer Profil",birim:"metre",min:80,max:200,ic:"🔲"},
+    {id:"at5",ad:"Gergi Tavan (Streç)",birim:"m²",min:350,max:700,ic:"🔲"},
+    {id:"at6",ad:"Ahşap Lambri Tavan",birim:"m²",min:300,max:650,ic:"🪵"},
+    {id:"at7",ad:"Metal Kaset Tavan (60x60)",birim:"m²",min:250,max:550,ic:"🔲"},
+    {id:"at8",ad:"PVC Tavan Lambri",birim:"m²",min:120,max:280,ic:"🔲"},
+  ],
+  "Yalıtım & Su":[
+    {id:"y1",ad:"EPS Yalıtım 5cm",birim:"m²",min:60,max:95,ic:"🌡️"},
+    {id:"y2",ad:"XPS Zemin Yalıtımı 5cm",birim:"m²",min:120,max:180,ic:"🌡️"},
+    {id:"y3",ad:"Taşyünü Levha 5cm",birim:"m²",min:90,max:145,ic:"🌡️"},
+    {id:"y4",ad:"Cam Yünü Rulo",birim:"m²",min:50,max:85,ic:"🌡️"},
+    {id:"y5",ad:"Su Yalıtım Membranı",birim:"m²",min:60,max:120,ic:"💧"},
+    {id:"y6",ad:"Bitümlü Örtü 4mm",birim:"m²",min:80,max:130,ic:"💧"},
+  ],
+  "Çatı":[
+    {id:"ct1",ad:"Kiremit (Çift Oluklu)",birim:"adet",min:25,max:42,ic:"🏡"},
+    {id:"ct2",ad:"Oluklu Çatı Sacı",birim:"m²",min:150,max:230,ic:"🏡"},
+    {id:"ct3",ad:"Sandviç Panel 10cm",birim:"m²",min:350,max:520,ic:"🏡"},
+    {id:"ct4",ad:"Çatı Membranı",birim:"m²",min:40,max:85,ic:"🏡"},
+  ],
+  "Boya":[
+    {id:"bo1",ad:"İç Cephe Boyası",birim:"lt",min:50,max:110,ic:"🎨"},
+    {id:"bo2",ad:"Dış Cephe Silikon Boya",birim:"lt",min:90,max:175,ic:"🎨"},
+    {id:"bo3",ad:"Astar Boya",birim:"lt",min:40,max:75,ic:"🎨"},
+    {id:"bo4",ad:"Perdah Alçısı",birim:"torba 25kg",min:90,max:140,ic:"🎨"},
+  ],
+  "Tesisat":[
+    {id:"t1",ad:"PPR Boru Ø20",birim:"metre",min:30,max:55,ic:"🔧"},
+    {id:"t2",ad:"Bakır Boru Ø15",birim:"metre",min:80,max:130,ic:"🔧"},
+    {id:"t3",ad:"PVC Atık Borusu Ø100",birim:"metre",min:50,max:90,ic:"🔧"},
+    {id:"t4",ad:"Musluk / Armatür",birim:"adet",min:400,max:1800,ic:"🔧"},
+    {id:"t5",ad:"WC Grubu Komple",birim:"adet",min:2500,max:8000,ic:"🔧"},
+    {id:"t6",ad:"Lavabo Komple",birim:"adet",min:1500,max:5000,ic:"🔧"},
+    {id:"t7",ad:"Duş Teknesi / Kabini",birim:"adet",min:4000,max:18000,ic:"🚿"},
+  ],
+  "Doğalgaz":[
+    {id:"g1",ad:"Doğalgaz Borusu 1/2\"",birim:"metre",min:80,max:140,ic:"🔥"},
+    {id:"g2",ad:"Doğalgaz Borusu 3/4\"",birim:"metre",min:110,max:180,ic:"🔥"},
+    {id:"g3",ad:"Kombi",birim:"adet",min:8000,max:25000,ic:"🔥"},
+    {id:"g4",ad:"Doğalgaz Bağlantı Malzeme (Daire)",birim:"daire",min:1200,max:2800,ic:"🔥"},
+  ],
+  "Elektrik":[
+    {id:"e1",ad:"NYM Kablo 3x2.5mm²",birim:"metre",min:20,max:38,ic:"⚡"},
+    {id:"e2",ad:"NYM Kablo 3x4mm²",birim:"metre",min:30,max:55,ic:"⚡"},
+    {id:"e3",ad:"NYM Kablo 3x6mm²",birim:"metre",min:45,max:80,ic:"⚡"},
+    {id:"e4",ad:"NYM Kablo 3x10mm²",birim:"metre",min:70,max:120,ic:"⚡"},
+    {id:"e5",ad:"Otomatik Sigorta 6-32A",birim:"adet",min:80,max:160,ic:"⚡"},
+    {id:"e6",ad:"Kaçak Akım Rölesi 40A",birim:"adet",min:400,max:900,ic:"⚡"},
+    {id:"e7",ad:"Elektrik Panosu",birim:"adet",min:800,max:2500,ic:"⚡"},
+    {id:"e8",ad:"Topraklı Priz",birim:"adet",min:60,max:150,ic:"🔌"},
+    {id:"e9",ad:"Anahtar (Tekli/İkili)",birim:"adet",min:60,max:200,ic:"🔌"},
+    {id:"e10",ad:"Kablo Kanalı Plastik",birim:"metre",min:15,max:35,ic:"⚡"},
+  ],
+  "Armatür & Lamba":[
+    {id:"l1",ad:"LED Spot Armatür (Alçıpan)",birim:"adet",min:80,max:250,ic:"💡"},
+    {id:"l2",ad:"Sıva Altı Spot Armatür",birim:"adet",min:100,max:300,ic:"💡"},
+    {id:"l3",ad:"Panel LED Armatür (60x60)",birim:"adet",min:400,max:900,ic:"💡"},
+    {id:"l4",ad:"Tüp Floresan Armatür",birim:"adet",min:150,max:400,ic:"💡"},
+    {id:"l5",ad:"Avize (Orta Boy)",birim:"adet",min:1000,max:8000,ic:"💡"},
+    {id:"l6",ad:"Dış Mekan Aplik",birim:"adet",min:300,max:1500,ic:"💡"},
+    {id:"l7",ad:"Bahçe Aydınlatma Direği",birim:"adet",min:600,max:2500,ic:"💡"},
+    {id:"l8",ad:"Acil Aydınlatma Armatürü",birim:"adet",min:300,max:700,ic:"🔦"},
+    {id:"l9",ad:"Mertek Spot Hattı (1mt)",birim:"adet",min:200,max:600,ic:"💡"},
+    {id:"l10",ad:"LED Şerit (5mt Rulo)",birim:"rulo",min:150,max:500,ic:"💡"},
+  ],
+  "Mekanik":[
+    {id:"mek1",ad:"Radyatör Panel 600x1000",birim:"adet",min:1800,max:3500,ic:"♨️"},
+    {id:"mek2",ad:"Yerden Isıtma Borusu (PEX)",birim:"m²",min:120,max:220,ic:"♨️"},
+    {id:"mek3",ad:"Sirkülasyon Pompası",birim:"adet",min:1200,max:3500,ic:"♨️"},
+    {id:"mek4",ad:"Genleşme Tankı 18lt",birim:"adet",min:600,max:1200,ic:"♨️"},
+    {id:"mek5",ad:"Kollektör (Manifold) 6'lı",birim:"adet",min:1500,max:3000,ic:"♨️"},
+    {id:"mek6",ad:"Fan-Coil Ünitesi",birim:"adet",min:4000,max:10000,ic:"❄️"},
+    {id:"mek7",ad:"Klima Duvar Tipi 12000 BTU",birim:"adet",min:8000,max:18000,ic:"❄️"},
+    {id:"mek8",ad:"Klima Kaset Tipi 24000 BTU",birim:"adet",min:15000,max:35000,ic:"❄️"},
+    {id:"mek9",ad:"Hidrofor 500lt",birim:"adet",min:8000,max:18000,ic:"💧"},
+    {id:"mek10",ad:"Su Deposu PE 1000lt",birim:"adet",min:3500,max:7000,ic:"💧"},
+  ],
+  "Doğrama":[
+    {id:"do1",ad:"PVC Pencere 120x120 (Isı Camlı)",birim:"adet",min:4000,max:7500,ic:"🪟"},
+    {id:"do2",ad:"Alüminyum Doğrama Isı Camlı",birim:"m²",min:2500,max:5000,ic:"🪟"},
+    {id:"do3",ad:"Ahşap İç Kapı Kasalı",birim:"adet",min:3000,max:9000,ic:"🚪"},
+    {id:"do4",ad:"Çelik Giriş Kapısı",birim:"adet",min:6000,max:18000,ic:"🚪"},
+    {id:"do5",ad:"Sürgülü Balkon Kapısı PVC",birim:"adet",min:5000,max:10000,ic:"🚪"},
+  ],
+  "Mutfak & Dolap":[
+    {id:"mut1",ad:"Mutfak Dolabı (Alt+Üst) Hazır",birim:"metre boy",min:3500,max:7000,ic:"🍳"},
+    {id:"mut2",ad:"Mutfak Dolabı Özel İmalat",birim:"metre boy",min:6000,max:15000,ic:"🍳"},
+    {id:"mut3",ad:"Vestiyer Dolabı Hazır",birim:"kapak m²",min:2500,max:5500,ic:"👔"},
+    {id:"mut4",ad:"Vestiyer Dolabı Özel İmalat",birim:"kapak m²",min:4500,max:10000,ic:"👔"},
+    {id:"mut5",ad:"Gardırop Sürgülü",birim:"m²",min:3000,max:7000,ic:"👔"},
+    {id:"mut6",ad:"Banyo Dolabı Alt",birim:"adet",min:2000,max:5000,ic:"🚿"},
+    {id:"mut7",ad:"Ankastre Fırın",birim:"adet",min:5000,max:18000,ic:"🍳"},
+    {id:"mut8",ad:"Ankastre Davlumbaz",birim:"adet",min:2500,max:8000,ic:"🍳"},
+  ],
+};
+
+const ISC={
+  "Kaba Yapı":[
+    {id:"i1",ad:"Kalıpçı İşçiliği",birim:"m²",min:450,max:800,ic:"👷"},
+    {id:"i2",ad:"Betoncu İşçiliği",birim:"m³",min:400,max:700,ic:"👷"},
+    {id:"i3",ad:"Demirci / Demir Bağlama",birim:"ton",min:2500,max:4000,ic:"👷"},
+    {id:"i4",ad:"Duvar Örme (Tuğla)",birim:"m²",min:180,max:320,ic:"🧱"},
+    {id:"i5",ad:"Duvar Örme (Ytong)",birim:"m²",min:200,max:380,ic:"🧱"},
+    {id:"i6",ad:"Kazı / Hafriyat",birim:"m³",min:150,max:350,ic:"⛏️"},
+    {id:"i7",ad:"Yıkım İşçiliği",birim:"m²",min:80,max:200,ic:"🔨"},
+  ],
+  "Sıva & Alçı":[
+    {id:"i8",ad:"İç Çimento Sıvası",birim:"m²",min:120,max:220,ic:"🏗️"},
+    {id:"i9",ad:"Dış Çimento Sıvası",birim:"m²",min:150,max:280,ic:"🏗️"},
+    {id:"i10",ad:"Alçı Sıva İşçiliği",birim:"m²",min:100,max:180,ic:"🏗️"},
+    {id:"i11",ad:"Perdah / Finiş",birim:"m²",min:80,max:150,ic:"🏗️"},
+    {id:"i12",ad:"Dış Cephe Mantolama",birim:"m²",min:180,max:320,ic:"🏗️"},
+  ],
+  "Kaplama":[
+    {id:"i13",ad:"Zemin Seramik Döşeme",birim:"m²",min:120,max:220,ic:"🏠"},
+    {id:"i14",ad:"Duvar Seramik Döşeme",birim:"m²",min:140,max:260,ic:"🏠"},
+    {id:"i15",ad:"Parke Döşeme",birim:"m²",min:100,max:200,ic:"🏠"},
+    {id:"i16",ad:"Mermer Döşeme",birim:"m²",min:200,max:400,ic:"🏠"},
+    {id:"i17",ad:"Mutfak Mermer Tezgah Montajı",birim:"metre",min:400,max:800,ic:"🍳"},
+    {id:"i18",ad:"Denizlik Mermer Montajı",birim:"metre",min:200,max:450,ic:"🏛️"},
+    {id:"i19",ad:"Basamak Mermer Montajı",birim:"adet",min:150,max:350,ic:"🪜"},
+    {id:"i20",ad:"Merdiven Seramik Kaplama",birim:"m²",min:130,max:240,ic:"🪜"},
+  ],
+  "Merdiven & Korkuluk":[
+    {id:"i21",ad:"Çelik Korkuluk İmalat+Montaj",birim:"metre",min:600,max:1400,ic:"🪜"},
+    {id:"i22",ad:"Pas. Çelik Korkuluk Montajı",birim:"metre",min:800,max:1800,ic:"🪜"},
+    {id:"i23",ad:"Cam Balustrat Montajı",birim:"metre",min:800,max:2000,ic:"🪟"},
+    {id:"i24",ad:"Balkon Korkuluk Montajı",birim:"metre",min:400,max:1000,ic:"🏠"},
+    {id:"i25",ad:"Ahşap Trabzan Montajı",birim:"metre",min:400,max:900,ic:"🪵"},
+  ],
+  "Asma Tavan":[
+    {id:"i26",ad:"Alçıpan Asma Tavan Düz",birim:"m²",min:150,max:280,ic:"🔲"},
+    {id:"i27",ad:"Alçıpan Asma Tavan Kademeli",birim:"m²",min:200,max:380,ic:"🔲"},
+    {id:"i28",ad:"Alçıpan Kutu/Gömme Tavan",birim:"m²",min:250,max:500,ic:"🔲"},
+    {id:"i29",ad:"Gergi Tavan Montajı",birim:"m²",min:200,max:450,ic:"🔲"},
+    {id:"i30",ad:"Metal Kaset Tavan Montajı",birim:"m²",min:150,max:320,ic:"🔲"},
+    {id:"i31",ad:"Kartonpiyer Montajı",birim:"metre",min:60,max:150,ic:"🔲"},
+    {id:"i32",ad:"Tavan Spot Delik Açma",birim:"adet",min:30,max:80,ic:"💡"},
+  ],
+  "Tesisat":[
+    {id:"i33",ad:"Su Tesisatı İşçiliği",birim:"m²",min:200,max:380,ic:"🔧"},
+    {id:"i34",ad:"Pis Su Tesisatı",birim:"m²",min:120,max:220,ic:"🔧"},
+    {id:"i35",ad:"Isıtma Tesisatı (Radyatör)",birim:"m²",min:250,max:450,ic:"♨️"},
+    {id:"i36",ad:"Yerden Isıtma Döşeme",birim:"m²",min:200,max:380,ic:"♨️"},
+    {id:"i37",ad:"Banyo/WC Ekipman Montajı",birim:"adet",min:1200,max:2500,ic:"🔧"},
+  ],
+  "Doğalgaz":[
+    {id:"i38",ad:"Doğalgaz İç Tesisat",birim:"m²",min:80,max:160,ic:"🔥"},
+    {id:"i39",ad:"Kombi Montajı",birim:"adet",min:800,max:1800,ic:"🔥"},
+    {id:"i40",ad:"Doğalgaz Abonelik+Sayaç",birim:"daire",min:2500,max:5000,ic:"🔥"},
+    {id:"i41",ad:"Baca Montajı",birim:"adet",min:1500,max:3500,ic:"🔥"},
+  ],
+  "Elektrik":[
+    {id:"i42",ad:"Elektrik Tesisat (Ham)",birim:"m²",min:180,max:320,ic:"⚡"},
+    {id:"i43",ad:"Elektrik Tesisat (Bitti)",birim:"m²",min:280,max:480,ic:"⚡"},
+    {id:"i44",ad:"Pano Montaj+Bağlantı",birim:"adet",min:800,max:1800,ic:"⚡"},
+    {id:"i45",ad:"Priz/Anahtar Montajı",birim:"adet",min:80,max:180,ic:"🔌"},
+    {id:"i46",ad:"Armatür/Lamba Montajı",birim:"adet",min:100,max:250,ic:"💡"},
+    {id:"i47",ad:"Spot Çakma (Asma Tavana)",birim:"adet",min:60,max:150,ic:"💡"},
+    {id:"i48",ad:"Topraklama Tesisatı",birim:"daire",min:1200,max:2800,ic:"⚡"},
+  ],
+  "Mekanik":[
+    {id:"i49",ad:"Isıtma Sistemi (m²)",birim:"m²",min:300,max:550,ic:"♨️"},
+    {id:"i50",ad:"Klima Montajı",birim:"adet",min:800,max:1800,ic:"❄️"},
+    {id:"i51",ad:"Fan-Coil Montajı",birim:"adet",min:1200,max:2500,ic:"❄️"},
+    {id:"i52",ad:"Hidrofor/Depo Montajı",birim:"adet",min:1500,max:3500,ic:"💧"},
+    {id:"i53",ad:"Havalandırma Kanal İşçiliği",birim:"m²",min:80,max:160,ic:"🌬️"},
+  ],
+  "Çatı":[
+    {id:"i54",ad:"Çatı Marangozluğu",birim:"m²",min:200,max:400,ic:"🏡"},
+    {id:"i55",ad:"Kiremit Döşeme",birim:"m²",min:120,max:220,ic:"🏡"},
+    {id:"i56",ad:"Sac Çatı Kaplama",birim:"m²",min:150,max:280,ic:"🏡"},
+  ],
+  "Boya":[
+    {id:"i57",ad:"İç Boya+Badana (m²)",birim:"m²",min:50,max:110,ic:"🎨"},
+    {id:"i58",ad:"Dış Cephe Boya",birim:"m²",min:80,max:160,ic:"🎨"},
+    {id:"i59",ad:"Dekoratif Boya",birim:"m²",min:120,max:280,ic:"🎨"},
+  ],
+  "Mutfak & Dolap":[
+    {id:"i60",ad:"Mutfak Dolabı Montajı",birim:"metre boy",min:300,max:650,ic:"🍳"},
+    {id:"i61",ad:"Vestiyer/Gardırop Montajı",birim:"m²",min:200,max:500,ic:"👔"},
+    {id:"i62",ad:"Banyo Dolabı Montajı",birim:"adet",min:250,max:600,ic:"🚿"},
+    {id:"i63",ad:"Ankastre Ekipman Montajı",birim:"adet",min:300,max:700,ic:"🍳"},
+  ],
+  "Genel":[
+    {id:"i64",ad:"Temizlik/Enkaz Taşıma",birim:"m²",min:30,max:80,ic:"🧹"},
+    {id:"i65",ad:"Usta Günlük",birim:"gün",min:1200,max:2200,ic:"👷"},
+    {id:"i66",ad:"Yardımcı İşçi Günlük",birim:"gün",min:700,max:1200,ic:"👷"},
+    {id:"i67",ad:"Şantiye Şefi Aylık",birim:"ay",min:15000,max:35000,ic:"👷"},
+  ],
+};
+
+const PRJ={
+  "Mimari":[
+    {id:"p1",ad:"Mimari Ön Proje",birim:"m²",min:80,max:200,ic:"📐"},
+    {id:"p2",ad:"Mimari Uygulama Projesi",birim:"m²",min:120,max:300,ic:"📐"},
+    {id:"p3",ad:"İnşaat Ruhsat Projesi",birim:"m²",min:60,max:150,ic:"📐"},
+    {id:"p4",ad:"İç Mimari / Dekorasyon Projesi",birim:"m²",min:100,max:280,ic:"🎨"},
+    {id:"p5",ad:"3D Görselleştirme (Render)",birim:"adet",min:2000,max:8000,ic:"💻"},
+  ],
+  "Statik":[
+    {id:"p6",ad:"Statik / Betonarme Projesi",birim:"m²",min:60,max:160,ic:"🏗️"},
+    {id:"p7",ad:"Zemin Etüt Raporu",birim:"adet",min:5000,max:18000,ic:"🔬"},
+    {id:"p8",ad:"Deprem Güçlendirme Raporu",birim:"m²",min:80,max:200,ic:"🏗️"},
+  ],
+  "Elektrik Projesi":[
+    {id:"p9",ad:"Elektrik Tesisat Projesi",birim:"m²",min:25,max:70,ic:"⚡"},
+    {id:"p10",ad:"Aydınlatma Hesabı+Projesi",birim:"m²",min:20,max:60,ic:"💡"},
+    {id:"p11",ad:"Güçlü Akım Projesi (Komple)",birim:"daire",min:1500,max:4000,ic:"⚡"},
+    {id:"p12",ad:"Zayıf Akım (Data/TV) Projesi",birim:"daire",min:800,max:2500,ic:"📡"},
+  ],
+  "Mekanik Proje":[
+    {id:"p13",ad:"Sıhhi Tesisat Projesi",birim:"m²",min:20,max:55,ic:"🔧"},
+    {id:"p14",ad:"Isıtma Projesi",birim:"m²",min:25,max:65,ic:"♨️"},
+    {id:"p15",ad:"HVAC / Havalandırma Projesi",birim:"m²",min:30,max:80,ic:"🌬️"},
+    {id:"p16",ad:"Yangın Tesisat Projesi",birim:"m²",min:20,max:55,ic:"🚒"},
+  ],
+  "Doğalgaz Projesi":[
+    {id:"p17",ad:"Doğalgaz İç Tesisat Projesi",birim:"m²",min:15,max:40,ic:"🔥"},
+    {id:"p18",ad:"Doğalgaz Abonelik Hizmet Bedeli",birim:"daire",min:800,max:2200,ic:"🔥"},
+    {id:"p19",ad:"IGDAŞ/GAZDAŞ Bağlantı Ücreti",birim:"daire",min:3000,max:8000,ic:"🔥"},
+  ],
+  "Ruhsat & Harç":[
+    {id:"p20",ad:"İnşaat Ruhsatı Harç+Belediye",birim:"m²",min:80,max:200,ic:"📋"},
+    {id:"p21",ad:"Yapı Denetim Ücreti",birim:"m²",min:50,max:120,ic:"📋"},
+    {id:"p22",ad:"İskan (Yapı Kullanım İzni)",birim:"m²",min:20,max:60,ic:"📋"},
+    {id:"p23",ad:"İnşaat All Risk Sigortası",birim:"proje %",min:2,max:5,ic:"📋"},
+  ],
+  "Müşavirlik":[
+    {id:"p24",ad:"Proje Yönetimi/İnşaat Müdürü",birim:"m²",min:100,max:250,ic:"👔"},
+    {id:"p25",ad:"Kontrollük Hizmet Bedeli",birim:"m²",min:60,max:150,ic:"👔"},
+    {id:"p26",ad:"Keşif/Metraj Hazırlama",birim:"m²",min:20,max:60,ic:"📊"},
+  ],
+};
+
+// ============================================================
+// ADMİN PANELİNDEN GÜNCEL FİYATLARI YÜKLE
+// Admin panelinde (admin.html) güncellenen fiyatlar localStorage'a
+// "insaat_prices_v5" anahtarıyla kaydedilir. Burada varsa onlar kullanılır.
+// ============================================================
+(function loadAdminPrices(){
+  try{
+    const saved=localStorage.getItem('insaat_prices_v5');
+    if(!saved)return;
+    const data=JSON.parse(saved);
+    if(data.malzeme){
+      Object.entries(data.malzeme).forEach(([cat,items])=>{
+        if(MAL[cat])MAL[cat]=items;
+        else MAL[cat]=items; // yeni kategori de eklensin
+      });
+    }
+    if(data.iscilik){
+      Object.entries(data.iscilik).forEach(([cat,items])=>{
+        if(ISC[cat])ISC[cat]=items;
+        else ISC[cat]=items;
+      });
+    }
+    if(data.proje){
+      Object.entries(data.proje).forEach(([cat,items])=>{
+        if(PRJ[cat])PRJ[cat]=items;
+        else PRJ[cat]=items;
+      });
+    }
+    console.log('✅ Admin fiyatları yüklendi:', new Date().toLocaleString('tr-TR'));
+  }catch(e){
+    console.warn('Admin fiyat yükleme hatası:', e);
+  }
+})();
+
+// Birim maliyetler
+const KATS={
+  konut:{cimento:.28,demir:.045,kum:.5,cakil:.35,beton:.25,tugla:55,yal:.85,siva:1.2,boya:2.0},
+  villa:{cimento:.32,demir:.055,kum:.6,cakil:.4,beton:.28,tugla:60,yal:1.0,siva:1.3,boya:2.2},
+  isyeri:{cimento:.30,demir:.050,kum:.55,cakil:.38,beton:.27,tugla:50,yal:.8,siva:1.0,boya:1.8},
+  depo:{cimento:.22,demir:.060,kum:.4,cakil:.55,beton:.30,tugla:30,yal:.5,siva:.5,boya:1.0},
+  cati:{cimento:.05,demir:.015,kum:.1,cakil:.05,beton:.03,tugla:0,yal:1.0,siva:0,boya:0},
+  tadilat:{cimento:.08,demir:.01,kum:.15,cakil:.05,beton:.05,tugla:10,yal:.5,siva:.8,boya:2.5},
+};
+const KK={ekonomik:.80,standart:1.0,lux:1.45};
+
+function getBM(tur,kal,bolge){
+  const k=KK[kal]||1,b=parseFloat(bolge)||1;
+  const mat={
+    konut:{temel:1100,kaba:4500,cati:900,ince:1800,tes:1000,dogalgaz:350,elek:750,mekanik:900,yal:400,boya:250,mutfak:1200,merdiven:600,asmatavan:450},
+    villa:{temel:1250,kaba:5000,cati:1100,ince:2300,tes:1250,dogalgaz:400,elek:900,mekanik:1100,yal:500,boya:350,mutfak:1800,merdiven:900,asmatavan:600},
+    isyeri:{temel:1150,kaba:4800,cati:800,ince:1600,tes:1400,dogalgaz:250,elek:1200,mekanik:1400,yal:350,boya:220,mutfak:0,merdiven:500,asmatavan:550},
+    depo:{temel:900,kaba:3200,cati:700,ince:600,tes:500,dogalgaz:200,elek:600,mekanik:500,yal:250,boya:130,mutfak:0,merdiven:200,asmatavan:0},
+    cati:{temel:0,kaba:0,cati:1200,ince:0,tes:0,dogalgaz:0,elek:0,mekanik:0,yal:300,boya:0,mutfak:0,merdiven:0,asmatavan:0},
+    tadilat:{temel:0,kaba:0,cati:0,ince:2000,tes:750,dogalgaz:300,elek:600,mekanik:500,yal:300,boya:350,mutfak:800,merdiven:300,asmatavan:350},
+  };
+  const isc={
+    konut:{temel:1100,kaba:4000,cati:900,ince:1700,tes:1000,dogalgaz:300,elek:750,mekanik:800,yal:400,boya:350,mutfak:800,merdiven:400,asmatavan:350},
+    villa:{temel:1250,kaba:4500,cati:1100,ince:2200,tes:1250,dogalgaz:350,elek:900,mekanik:1000,yal:500,boya:450,mutfak:1200,merdiven:600,asmatavan:500},
+    isyeri:{temel:1150,kaba:4200,cati:800,ince:1400,tes:1400,dogalgaz:250,elek:1300,mekanik:1300,yal:350,boya:280,mutfak:0,merdiven:350,asmatavan:450},
+    depo:{temel:900,kaba:2800,cati:700,ince:600,tes:500,dogalgaz:180,elek:600,mekanik:500,yal:250,boya:170,mutfak:0,merdiven:150,asmatavan:0},
+    cati:{temel:0,kaba:0,cati:1300,ince:0,tes:0,dogalgaz:0,elek:0,mekanik:0,yal:300,boya:0,mutfak:0,merdiven:0,asmatavan:0},
+    tadilat:{temel:0,kaba:0,cati:0,ince:2000,tes:750,dogalgaz:280,elek:600,mekanik:500,yal:300,boya:450,mutfak:600,merdiven:200,asmatavan:280},
+  };
+  const prj={
+    konut:{mimari:180,statik:90,elek_prj:45,mekanik_prj:50,dogalgaz_prj:25,ruhsat:120},
+    villa:{mimari:250,statik:120,elek_prj:55,mekanik_prj:65,dogalgaz_prj:30,ruhsat:150},
+    isyeri:{mimari:200,statik:100,elek_prj:60,mekanik_prj:70,dogalgaz_prj:25,ruhsat:140},
+    depo:{mimari:100,statik:80,elek_prj:30,mekanik_prj:40,dogalgaz_prj:15,ruhsat:80},
+    cati:{mimari:50,statik:40,elek_prj:0,mekanik_prj:0,dogalgaz_prj:0,ruhsat:30},
+    tadilat:{mimari:120,statik:60,elek_prj:30,mekanik_prj:35,dogalgaz_prj:20,ruhsat:50},
+  };
+  const base=tur in mat?tur:'konut';
+  const rm={},ri={},rp={};
+  for(const key in mat[base])rm[key]=Math.round(mat[base][key]*k*b);
+  for(const key in isc[base])ri[key]=Math.round(isc[base][key]*k*b);
+  for(const key in prj[base])rp[key]=Math.round(prj[base][key]*k*b);
+  return{mat:rm,isc:ri,prj:rp};
+}
+
+// ============================================================
+// STATE
+// ============================================================
+let curMod='oto';
+let bgOran=5; // bilinmeyen gider %
+let mBgOran=5;
+let mKalemler=[];
+let kEkler=[];
+let kBaseData=null;
+let pickTarget='';
+let pendingItem=null;
+let fMod='malzeme';
+let aktifPCat=null;
+
+function setBG(v,btn){
+  bgOran=v;
+  document.querySelectorAll('.bx-opt').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function setMBG(v,btn){
+  mBgOran=v;
+  document.querySelectorAll('#m-manuel .bx-opt').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ============================================================
+// MOD
+// ============================================================
+function setMod(mod,btn){
+  curMod=mod;
+  document.querySelectorAll('.mtab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  ['oto','manuel','karma'].forEach(m=>document.getElementById('m-'+m).style.display=m===mod?'block':'none');
+}
+function updateOF(){
+  const t=document.getElementById('o_tur').value;
+  document.getElementById('o_kr').style.display=(t==='cati'||t==='tadilat')?'none':'block';
+}
+
+// ============================================================
+// OTOMATİK
+// ============================================================
+function hesaplaOto(){
+  const adi=document.getElementById('o_adi').value||'İsimsiz Proje';
+  const tur=document.getElementById('o_tur').value;
+  const alan=parseFloat(document.getElementById('o_alan').value);
+  const kat=parseFloat(document.getElementById('o_kat').value)||1;
+  const bolge=document.getElementById('o_bolge').value;
+  const kal=document.getElementById('o_kal').value;
+  if(!alan||alan<=0){alert('Lütfen inşaat alanını girin!');return;}
+  const topAlan=alan*kat;
+  const kc=KATS[tur]||KATS.konut;
+  const bm=getBM(tur,kal,bolge);
+  const chk=id=>document.getElementById(id).checked;
+
+  const sarf={
+    cimento:(kc.cimento*topAlan).toFixed(1),demir:(kc.demir*topAlan).toFixed(2),
+    kum:(kc.kum*topAlan).toFixed(1),cakil:(kc.cakil*topAlan).toFixed(1),
+    beton:(kc.beton*topAlan).toFixed(1),tugla:Math.round(kc.tugla*topAlan),
+    yal:Math.round(kc.yal*topAlan),siva:Math.round(kc.siva*topAlan),boya:Math.round(kc.boya*topAlan)
+  };
+
+  const kdefs=[
+    {id:'c_temel',ad:'Temel & Kazı',k:'temel',af:topAlan},
+    {id:'c_kaba',ad:'Kaba Yapı (Beton/Demir/Duvar)',k:'kaba',af:topAlan},
+    {id:'c_cati',ad:'Çatı',k:'cati',af:alan},
+    {id:'c_ince',ad:'İnce İşler (Sıva/Kaplama)',k:'ince',af:topAlan},
+    {id:'c_tes',ad:'Sıhhi Tesisat (Su/Pis Su)',k:'tes',af:topAlan},
+    {id:'c_dogalgaz',ad:'Doğalgaz Tesisatı',k:'dogalgaz',af:topAlan},
+    {id:'c_elek',ad:'Elektrik Tesisatı',k:'elek',af:topAlan},
+    {id:'c_mekanik',ad:'Mekanik (Isıtma/Soğutma/Havalandırma)',k:'mekanik',af:topAlan},
+    {id:'c_yal',ad:'Isı Yalıtımı',k:'yal',af:topAlan},
+    {id:'c_boya',ad:'Boya & Badana',k:'boya',af:topAlan},
+    {id:'c_mutfak',ad:'Mutfak Dolabı & İç Donanım',k:'mutfak',af:topAlan},
+    {id:'c_merdiven',ad:'Merdiven / Balkon Korkuluk',k:'merdiven',af:topAlan},
+    {id:'c_asmatavan',ad:'Asma Tavan (Alçıpan/Gergi)',k:'asmatavan',af:topAlan},
+  ];
+
+  const kalemler=[];
+  let totMat=0,totIsc=0;
+  kdefs.forEach(kd=>{
+    if(!chk(kd.id))return;
+    const mt=(bm.mat[kd.k]||0)*kd.af,it=(bm.isc[kd.k]||0)*kd.af;
+    totMat+=mt;totIsc+=it;
+    kalemler.push({ad:kd.ad,alan:kd.af,matBM:bm.mat[kd.k]||0,iscBM:bm.isc[kd.k]||0,matT:mt,iscT:it,top:mt+it});
+  });
+
+  // Proje
+  const prjKalemler=[];
+  let totPrj=0;
+  if(chk('c_prj')){
+    [{ad:'Mimari Proje (Ön+Uygulama)',k:'mimari'},{ad:'Statik/Betonarme Projesi',k:'statik'},
+     {ad:'Elektrik Tesisat Projesi',k:'elek_prj'},{ad:'Mekanik Tesisat Projesi',k:'mekanik_prj'},
+     {ad:'Doğalgaz Projesi',k:'dogalgaz_prj'},{ad:'Ruhsat+Yapı Denetim+Harçlar',k:'ruhsat'}
+    ].forEach(p=>{
+      const t=(bm.prj[p.k]||0)*topAlan;
+      totPrj+=t;
+      prjKalemler.push({ad:p.ad,alan:topAlan,bmPrj:bm.prj[p.k]||0,t});
+    });
+  }
+
+  const araToplam=totMat+totIsc+totPrj;
+  const bilGider=Math.round(araToplam*bgOran/100);
+  const toplam=araToplam+bilGider;
+
+  window._otoH={adi,tur,alan,kat,topAlan,kal,bolge,sarf,kalemler,prjKalemler,totMat,totIsc,totPrj,araToplam,bilGider,bgOran,toplam,tarih:td(),tip:'otomatik'};
+  renderOtoRes(window._otoH);
+  const el=document.getElementById('oto_res');
+  el.style.display='block';
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderOtoRes(h){
+  const hasPrj=h.totPrj>0,hasBil=h.bilGider>0;
+  const cols=2+(hasPrj?1:0)+(hasBil?1:0);
+
+  let miniHTML=`<div class="minis" style="grid-template-columns:repeat(${cols},1fr)">
+    <div class="mini mat"><div class="mini-v">${fTL(h.totMat)}</div><div class="mini-l">🧱 Malzeme</div></div>
+    <div class="mini isc"><div class="mini-v">${fTL(h.totIsc)}</div><div class="mini-l">👷 İşçilik</div></div>
+    ${hasPrj?`<div class="mini prj"><div class="mini-v">${fTL(h.totPrj)}</div><div class="mini-l">📐 Proje</div></div>`:''}
+    ${hasBil?`<div class="mini bil"><div class="mini-v">${fTL(h.bilGider)}</div><div class="mini-l">⚠️ %${h.bgOran} Bilinmeyen</div></div>`:''}
+  </div>`;
+
+  const tablo=`<table class="ct">
+    <tr><th>İş Kalemi</th><th>Alan</th><th>🧱₺/m²→Toplam</th><th>👷₺/m²→Toplam</th><th>Kalem Top.</th></tr>
+    ${h.kalemler.map(k=>`<tr>
+      <td style="font-size:.74rem">${k.ad}</td>
+      <td style="color:var(--M);font-size:.72rem">${k.alan}m²</td>
+      <td style="color:var(--B);font-size:.72rem"><b>${fTL(k.matBM)}</b><br><span style="color:var(--M)">${fTL(k.matT)}</span></td>
+      <td style="color:var(--O);font-size:.72rem"><b>${fTL(k.iscBM)}</b><br><span style="color:var(--M)">${fTL(k.iscT)}</span></td>
+      <td style="font-weight:700;font-size:.76rem">${fTL(k.top)}</td>
+    </tr>`).join('')}
+    <tr class="tr-mat"><td colspan="4">🧱 Toplam Malzeme</td><td>${fTL(h.totMat)}</td></tr>
+    <tr class="tr-isc"><td colspan="4">👷 Toplam İşçilik</td><td>${fTL(h.totIsc)}</td></tr>
+    ${hasPrj?`<tr class="tr-prj"><td colspan="4">📐 Toplam Proje/Ruhsat</td><td>${fTL(h.totPrj)}</td></tr>`:''}
+    ${hasBil?`<tr class="tr-bil"><td colspan="4">⚠️ Bilinmeyen Gider (%${h.bgOran})</td><td>${fTL(h.bilGider)}</td></tr>`:''}
+    <tr class="tr-top"><td colspan="4">💰 GENEL TOPLAM</td><td>${fTL(h.toplam)}</td></tr>
+  </table>`;
+
+  let prjHTML='';
+  if(hasPrj){
+    prjHTML=`<div class="card">
+      <div class="ch"><div class="cht">📐 Proje & Ruhsat Giderleri</div></div>
+      <div class="cb" style="padding:0">
+        <table class="ct">
+          <tr><th>Kalem</th><th>Alan</th><th>₺/m²</th><th>Tutar</th></tr>
+          ${h.prjKalemler.map(p=>`<tr><td style="font-size:.74rem">${p.ad}</td><td style="font-size:.72rem">${p.alan}m²</td><td style="color:var(--P)">${fTL(p.bmPrj)}</td><td style="font-weight:700;color:var(--P)">${fTL(p.t)}</td></tr>`).join('')}
+          <tr class="tr-prj"><td colspan="3">📐 TOPLAM PROJE</td><td>${fTL(h.totPrj)}</td></tr>
+        </table>
+      </div>
+    </div>`;
+  }
+
+  let bilHTML='';
+  if(hasBil){
+    bilHTML=`<div class="card" style="border:1.5px solid rgba(138,105,20,.25);background:var(--YL)">
+      <div class="ch" style="background:var(--YL)"><div class="cht" style="color:var(--Y)">⚠️ Bilinmeyen / Öngörülemeyen Gider</div></div>
+      <div class="cb" style="background:var(--YL)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="ri yi"><div class="rl">Oran</div><div class="rv">%${h.bgOran}</div></div>
+          <div class="ri yi"><div class="rl">Tutar</div><div class="rv">${fTL(h.bilGider)}</div></div>
+          <div class="ri yi full"><div class="rl">Hesaplama Tabanı</div><div class="rv">${fTL(h.araToplam)} × %${h.bgOran}</div></div>
+        </div>
+        <div style="font-size:.68rem;color:var(--Y);margin-top:8px;line-height:1.4">
+          ⚠️ Bu kalem; beklenmedik zemin koşulları, fiyat artışları, tasarım değişiklikleri ve diğer öngörülemeyen masraflar için ayrılmıştır.
+        </div>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById('oto_res').innerHTML=`
+    ${miniHTML}
+    <div class="banner"><div class="ban-ic">💰</div><div><div class="ban-v">${fTL(h.toplam)}</div><div class="ban-l">Toplam Tahmini Maliyet${hasBil?' (Bilinmeyen gider dahil)':''}</div></div></div>
+    <div class="card">
+      <div class="ch"><div class="cht">📦 Malzeme Sarfiyatı</div></div>
+      <div class="cb"><div class="rg">
+        <div class="ri"><div class="rl">Çimento</div><div class="rv">${h.sarf.cimento} ton</div></div>
+        <div class="ri"><div class="rl">İnş. Demiri</div><div class="rv">${h.sarf.demir} ton</div></div>
+        <div class="ri"><div class="rl">İnş. Kumu</div><div class="rv">${h.sarf.kum} m³</div></div>
+        <div class="ri"><div class="rl">Çakıl</div><div class="rv">${h.sarf.cakil} m³</div></div>
+        <div class="ri full"><div class="rl">Hazır Beton</div><div class="rv">${h.sarf.beton} m³</div></div>
+        <div class="ri"><div class="rl">Tuğla/Blok</div><div class="rv">${h.sarf.tugla} adet</div></div>
+        <div class="ri oi"><div class="rl">Boya Alanı</div><div class="rv">${h.sarf.boya} m²</div></div>
+        <div class="ri full bi"><div class="rl">Toplam İnşaat Alanı</div><div class="rv">${h.topAlan} m²</div></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="ch"><div class="cht">📊 Detaylı Maliyet — m² Bazında</div></div>
+      <div class="cb" style="padding:0">${tablo}</div>
+    </div>
+    ${prjHTML}${bilHTML}
+    <div style="padding:6px 14px;display:flex;gap:8px">
+      <button class="btn btn-out" style="flex:1" onclick="kaydet(window._otoH)">💾 Kaydet</button>
+      <button class="btn btn-O" style="flex:1" onclick="exportCSV(window._otoH)">📥 Excel</button>
+    </div>`;
+}
+
+// ============================================================
+// MANUEL
+// ============================================================
+function renderManuel(){
+  const ml=mKalemler.filter(k=>k.tip==='malzeme'),il=mKalemler.filter(k=>k.tip==='iscilik'),pl=mKalemler.filter(k=>k.tip==='proje');
+  document.getElementById('m_mal').innerHTML=ml.map(k=>kRow(k)).join('');
+  document.getElementById('m_me').style.display=ml.length?'none':'block';
+  document.getElementById('m_isc').innerHTML=il.map(k=>kRow(k)).join('');
+  document.getElementById('m_ie').style.display=il.length?'none':'block';
+  document.getElementById('m_prj').innerHTML=pl.map(k=>kRow(k)).join('');
+  document.getElementById('m_pe').style.display=pl.length?'none':'block';
+}
+function kRow(k){
+  const rc=k.tip==='malzeme'?'var(--B)':k.tip==='iscilik'?'var(--O)':'var(--P)';
+  return`<div class="krow"><div class="k-ic">${k.item.ic}</div><div class="k-info"><div class="k-name">${k.item.ad}</div><div class="k-det">${k.miktar} ${k.item.birim} × <span style="color:${rc}">${fTL(k.bf)}</span> = <strong>${fTL(k.top)}</strong></div></div><button class="k-del" onclick="silK('${k.uid}')">✕</button></div>`;
+}
+function silK(uid){mKalemler=mKalemler.filter(k=>k.uid!==uid);renderManuel();manuelHesapla();}
+
+function manuelHesapla(){
+  if(!mKalemler.length){document.getElementById('m_res').innerHTML='';return;}
+  const tM=mKalemler.filter(k=>k.tip==='malzeme').reduce((s,k)=>s+k.top,0);
+  const tI=mKalemler.filter(k=>k.tip==='iscilik').reduce((s,k)=>s+k.top,0);
+  const tP=mKalemler.filter(k=>k.tip==='proje').reduce((s,k)=>s+k.top,0);
+  const ara=tM+tI+tP;
+  const bil=Math.round(ara*mBgOran/100);
+  const top=ara+bil;
+  const hasBil=bil>0;
+  const cols=2+(tP>0?1:0)+(hasBil?1:0);
+  document.getElementById('m_res').innerHTML=`
+    <div class="minis" style="grid-template-columns:repeat(${cols},1fr)">
+      <div class="mini mat"><div class="mini-v">${fTL(tM)}</div><div class="mini-l">🧱 Malzeme</div></div>
+      <div class="mini isc"><div class="mini-v">${fTL(tI)}</div><div class="mini-l">👷 İşçilik</div></div>
+      ${tP>0?`<div class="mini prj"><div class="mini-v">${fTL(tP)}</div><div class="mini-l">📐 Proje</div></div>`:''}
+      ${hasBil?`<div class="mini bil"><div class="mini-v">${fTL(bil)}</div><div class="mini-l">⚠️ %${mBgOran}</div></div>`:''}
+    </div>
+    <div class="banner"><div class="ban-ic">💰</div><div><div class="ban-v">${fTL(top)}</div><div class="ban-l">Toplam${hasBil?` (bilinmeyen dahil, %${mBgOran})`:''}</div></div></div>`;
+}
+function manuelKaydet(){
+  const adi=document.getElementById('m_adi').value||'Manuel Proje';
+  if(!mKalemler.length){alert('Kalem ekleyin!');return;}
+  const tM=mKalemler.filter(k=>k.tip==='malzeme').reduce((s,k)=>s+k.top,0);
+  const tI=mKalemler.filter(k=>k.tip==='iscilik').reduce((s,k)=>s+k.top,0);
+  const tP=mKalemler.filter(k=>k.tip==='proje').reduce((s,k)=>s+k.top,0);
+  const ara=tM+tI+tP;const bil=Math.round(ara*mBgOran/100);
+  kaydet({adi,tip:'manuel',tarih:td(),kalemler:[...mKalemler],totMat:tM,totIsc:tI,totPrj:tP,araToplam:ara,bilGider:bil,bgOran:mBgOran,toplam:ara+bil});
+}
+function manuelExcel(){
+  const adi=document.getElementById('m_adi').value||'Manuel Proje';
+  const tM=mKalemler.filter(k=>k.tip==='malzeme').reduce((s,k)=>s+k.top,0);
+  const tI=mKalemler.filter(k=>k.tip==='iscilik').reduce((s,k)=>s+k.top,0);
+  const tP=mKalemler.filter(k=>k.tip==='proje').reduce((s,k)=>s+k.top,0);
+  const ara=tM+tI+tP;const bil=Math.round(ara*mBgOran/100);
+  exportCSV({adi,tip:'manuel',tarih:td(),kalemler:[...mKalemler],totMat:tM,totIsc:tI,totPrj:tP,araToplam:ara,bilGider:bil,bgOran:mBgOran,toplam:ara+bil});
+}
+
+// ============================================================
+// KARMA
+// ============================================================
+function karmaTemel(){
+  const alan=parseFloat(document.getElementById('k_alan').value);
+  if(!alan||alan<=0){alert('Alan girin!');return;}
+  const tur=document.getElementById('k_tur').value,kat=parseFloat(document.getElementById('k_kat').value)||1;
+  const kal=document.getElementById('k_kal').value,bolge=document.getElementById('k_bolge').value;
+  const kbg=parseInt(document.getElementById('k_bg').value)||0;
+  const topAlan=alan*kat,bm=getBM(tur,kal,bolge);
+  const keys=['temel','kaba','cati','ince','tes','dogalgaz','elek','mekanik','yal','boya'];
+  const adlar={temel:'Temel/Kazı',kaba:'Kaba Yapı',cati:'Çatı',ince:'İnce İşler',tes:'Tesisat',dogalgaz:'Doğalgaz',elek:'Elektrik',mekanik:'Mekanik',yal:'Isı Yalıtımı',boya:'Boya/Badana'};
+  let tM=0,tI=0;
+  const kalemler=keys.map(k=>{
+    const af=k==='cati'?alan:topAlan,mt=(bm.mat[k]||0)*af,it=(bm.isc[k]||0)*af;
+    tM+=mt;tI+=it;
+    return{ad:adlar[k],alan:af,matBM:bm.mat[k]||0,iscBM:bm.isc[k]||0,matT:mt,iscT:it,top:mt+it};
+  }).filter(k=>k.top>0);
+  kBaseData={adi:document.getElementById('k_adi').value||'Karma Proje',tur,alan,kat,topAlan,kal,bolge,tarih:td(),kalemler,totMat:tM,totIsc:tI,totPrj:0,araToplam:tM+tI,bilGider:0,bgOran:kbg,toplam:tM+tI,tip:'karma'};
+  document.getElementById('karma_ek').style.display='block';
+  karmaHesapla();
+  document.getElementById('karma_ek').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function karmaHesapla(){
+  if(!kBaseData)return;
+  const kbg=parseInt(document.getElementById('k_bg').value)||0;
+  const ekM=kEkler.filter(k=>k.tip==='malzeme').reduce((s,k)=>s+k.top,0);
+  const ekI=kEkler.filter(k=>k.tip==='iscilik').reduce((s,k)=>s+k.top,0);
+  const ekP=kEkler.filter(k=>k.tip==='proje').reduce((s,k)=>s+k.top,0);
+  const tM=kBaseData.totMat+ekM,tI=kBaseData.totIsc+ekI,tP=ekP;
+  const ara=tM+tI+tP,bil=Math.round(ara*kbg/100),top=ara+bil;
+  const hasBil=bil>0,cols=2+(tP>0?1:0)+(hasBil?1:0);
+  document.getElementById('k_res').innerHTML=`
+    <div class="minis" style="grid-template-columns:repeat(${cols},1fr)">
+      <div class="mini mat"><div class="mini-v">${fTL(tM)}</div><div class="mini-l">🧱 Malzeme</div></div>
+      <div class="mini isc"><div class="mini-v">${fTL(tI)}</div><div class="mini-l">👷 İşçilik</div></div>
+      ${tP>0?`<div class="mini prj"><div class="mini-v">${fTL(tP)}</div><div class="mini-l">📐 Proje</div></div>`:''}
+      ${hasBil?`<div class="mini bil"><div class="mini-v">${fTL(bil)}</div><div class="mini-l">⚠️ %${kbg}</div></div>`:''}
+    </div>
+    <div class="banner"><div class="ban-ic">💰</div><div><div class="ban-v">${fTL(top)}</div><div class="ban-l">Toplam (Temel + Ek${hasBil?` + %${kbg} Bilinmeyen`:''})</div></div></div>`;
+}
+function karmaKaydet(){if(!kBaseData)return;const kbg=parseInt(document.getElementById('k_bg').value)||0;const ekM=kEkler.filter(k=>k.tip==='malzeme').reduce((s,k)=>s+k.top,0);const ekI=kEkler.filter(k=>k.tip==='iscilik').reduce((s,k)=>s+k.top,0);const ekP=kEkler.filter(k=>k.tip==='proje').reduce((s,k)=>s+k.top,0);const tM=kBaseData.totMat+ekM,tI=kBaseData.totIsc+ekI,tP=ekP,ara=tM+tI+tP,bil=Math.round(ara*kbg/100);kaydet({...kBaseData,ekKalemler:[...kEkler],totMat:tM,totIsc:tI,totPrj:tP,araToplam:ara,bilGider:bil,bgOran:kbg,toplam:ara+bil});}
+function karmaExcel(){if(!kBaseData)return;const kbg=parseInt(document.getElementById('k_bg').value)||0;const ekM=kEkler.filter(k=>k.tip==='malzeme').reduce((s,k)=>s+k.top,0);const ekI=kEkler.filter(k=>k.tip==='iscilik').reduce((s,k)=>s+k.top,0);const ekP=kEkler.filter(k=>k.tip==='proje').reduce((s,k)=>s+k.top,0);const tM=kBaseData.totMat+ekM,tI=kBaseData.totIsc+ekI,tP=ekP,ara=tM+tI+tP,bil=Math.round(ara*kbg/100);exportCSV({...kBaseData,ekKalemler:[...kEkler],totMat:tM,totIsc:tI,totPrj:tP,araToplam:ara,bilGider:bil,bgOran:kbg,toplam:ara+bil});}
+
+// ============================================================
+// PICK MODAL
+// ============================================================
+function openPick(target){
+  pickTarget=target;
+  const isM=['malzeme','k_m'].includes(target);
+  const isI=['iscilik','k_i'].includes(target);
+  const data=isM?MAL:isI?ISC:PRJ;
+  document.getElementById('pick_title').textContent=isM?'🧱 Malzeme Seç':isI?'👷 İşçilik Seç':'📐 Proje / Müşavirlik';
+  const cats=Object.keys(data);
+  document.getElementById('pick_cats').innerHTML=cats.map((c,i)=>`<button class="mcb${i===0?' active':''}" onclick="setPC('${c}',this)">${c}</button>`).join('');
+  renderPI(data[cats[0]]);
+  document.getElementById('pickModal').classList.remove('hid');
+}
+function setPC(cat,btn){
+  document.querySelectorAll('.mcb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  const isM=['malzeme','k_m'].includes(pickTarget),isI=['iscilik','k_i'].includes(pickTarget);
+  renderPI((isM?MAL:isI?ISC:PRJ)[cat]);
+}
+function renderPI(items){
+  document.getElementById('pick_items').innerHTML=items.map(it=>`
+    <div class="pitem" onclick="selItem('${it.id}')">
+      <div class="pit-ic">${it.ic}</div>
+      <div style="flex:1"><div class="pit-name">${it.ad}</div><div class="pit-unit">/ ${it.birim}</div></div>
+      <div class="pit-price">${it.min===0&&it.max===0?'—':fTLRange(it.min,it.max)}</div>
+    </div>`).join('');
+}
+function selItem(id){
+  const isM=['malzeme','k_m'].includes(pickTarget),isI=['iscilik','k_i'].includes(pickTarget);
+  const data=isM?MAL:isI?ISC:PRJ;
+  let found=null;for(const cat of Object.values(data)){found=cat.find(x=>x.id===id);if(found)break;}
+  if(!found)return;
+  pendingItem=found;
+  document.getElementById('pickModal').classList.add('hid');
+  document.getElementById('q_t').textContent=found.ad;
+  document.getElementById('q_s').textContent=`📏 ${found.birim}  ·  💰 ${found.min===0&&found.max===0?'Manuel girilecek':fTLRange(found.min,found.max)}`;
+  document.getElementById('q_b').textContent=found.birim;
+  document.getElementById('q_m').value='';document.getElementById('q_f').value='';
+  document.getElementById('qtyModal').classList.remove('hid');
+  setTimeout(()=>document.getElementById('q_m').focus(),150);
+}
+function closePick(e){if(e.target===document.getElementById('pickModal'))document.getElementById('pickModal').classList.add('hid');}
+function closeQty(){document.getElementById('qtyModal').classList.add('hid');pendingItem=null;}
+function confirmQty(){
+  if(!pendingItem)return;
+  const miktar=parseFloat(document.getElementById('q_m').value);
+  if(!miktar||miktar<=0){alert('Miktar girin!');return;}
+  const cf=parseFloat(document.getElementById('q_f').value);
+  const bf=cf>0?cf:Math.round((pendingItem.min+pendingItem.max)/2);
+  if(bf<=0){alert('Birim fiyat girin!');return;}
+  const isM=['malzeme','k_m'].includes(pickTarget),isI=['iscilik','k_i'].includes(pickTarget);
+  const tip=isM?'malzeme':isI?'iscilik':'proje';
+  const kalem={uid:Date.now()+'_'+Math.random().toString(36).slice(2),tip,item:pendingItem,miktar,bf,top:Math.round(miktar*bf)};
+  if(['malzeme','iscilik','proje'].includes(pickTarget)){
+    mKalemler.push(kalem);renderManuel();manuelHesapla();
+  } else {
+    kEkler.push(kalem);
+    document.getElementById('k_ekler').innerHTML=kEkler.map(k=>kRow(k)).join('');
+    document.getElementById('k_empty').style.display=kEkler.length?'none':'block';
+    karmaHesapla();
+  }
+  closeQty();
+}
+
+// ============================================================
+// FİYAT LİSTESİ
+// ============================================================
+function initFiyatlar(){fMod='malzeme';renderFTabs();}
+function renderFTabs(){
+  const data=fMod==='malzeme'?MAL:fMod==='iscilik'?ISC:PRJ;
+  const cats=Object.keys(data);aktifPCat=cats[0];
+  document.getElementById('ptabs').innerHTML=
+    `<button class="pcat" style="${fMod==='malzeme'?'background:var(--B);border-color:var(--B);color:#fff':'color:var(--B);border-color:var(--B)'}" onclick="setFMod('malzeme')">🧱 Malzeme</button>`+
+    `<button class="pcat" style="${fMod==='iscilik'?'background:var(--O);border-color:var(--O);color:#fff':'color:var(--O);border-color:var(--O)'}" onclick="setFMod('iscilik')">👷 İşçilik</button>`+
+    `<button class="pcat" style="${fMod==='proje'?'background:var(--P);border-color:var(--P);color:#fff':'color:var(--P);border-color:var(--P)'}" onclick="setFMod('proje')">📐 Proje</button>`+
+    `<span style="width:1px;background:var(--bd);margin:3px 3px;flex-shrink:0;display:inline-block"></span>`+
+    cats.map((c,i)=>`<button class="pcat${i===0?' active':''}" onclick="setPCat('${c}',this)">${c}</button>`).join('');
+  renderFList();
+}
+function setFMod(mod){fMod=mod;renderFTabs();}
+function setPCat(cat,btn){
+  aktifPCat=cat;
+  document.querySelectorAll('#ptabs .pcat').forEach(b=>{if(b.getAttribute('onclick')&&!b.getAttribute('onclick').includes('setFMod'))b.classList.remove('active');});
+  btn.classList.add('active');renderFList();
+}
+function renderFList(){
+  const data=fMod==='malzeme'?MAL:fMod==='iscilik'?ISC:PRJ;
+  const items=data[aktifPCat]||[];
+  const clr=fMod==='malzeme'?'var(--B)':fMod==='iscilik'?'var(--O)':'var(--P)';
+  document.getElementById('plist').innerHTML=items.map(it=>`
+    <div class="pi">
+      <div class="pi-ic">${it.ic}</div>
+      <div class="pi-info"><div class="pi-name">${it.ad}</div><div class="pi-unit">/ ${it.birim}</div></div>
+      <div class="pi-right">
+        <div class="pi-price" style="color:${clr}">${it.min===0&&it.max===0?'Dahil':fTLRange(it.min,it.max)}</div>
+        <div class="pi-sub">${fMod==='malzeme'?'🧱':fMod==='iscilik'?'👷':'📐'} Mart 2025</div>
+      </div>
+    </div>`).join('');
+}
+
+// ============================================================
+// PROJELER
+// ============================================================
+function kaydet(obj){
+  const list=getProjeler();obj.id=Date.now();list.push(obj);
+  localStorage.setItem('insaat_v5',JSON.stringify(list));alert('✅ Proje kaydedildi!');
+}
+function getProjeler(){try{return JSON.parse(localStorage.getItem('insaat_v5')||'[]');}catch{return[];}}
+function renderProjeler(){
+  const list=getProjeler().reverse();const el=document.getElementById('pj_list');
+  if(!list.length){el.innerHTML=`<div class="empty"><div class="empty-i">📁</div><h3>Henüz proje yok</h3><p>Hesaplama yapıp Kaydet butonuna bas.</p></div>`;return;}
+  el.innerHTML=list.map(p=>`
+    <div class="pj">
+      <div class="pjh">
+        <div><div class="pj-name">${p.adi}</div><div class="pj-sub">${p.tip==='otomatik'?'🏗️ Otomatik':p.tip==='manuel'?'🔧 Manuel':'⚡ Karma'} · ${p.tarih}</div></div>
+        <div><div class="pj-cost">${fTL(p.toplam)}</div><div class="pj-cl">Toplam</div></div>
+      </div>
+      <div class="pjtags">
+        ${p.topAlan?`<span class="tag g">📐 ${p.topAlan}m²</span>`:''}
+        ${p.kal?`<span class="tag g">⭐ ${p.kal}</span>`:''}
+        <span class="tag b">🧱 ${fTL(p.totMat||0)}</span>
+        <span class="tag o">👷 ${fTL(p.totIsc||0)}</span>
+        ${(p.totPrj||0)>0?`<span class="tag p">📐 ${fTL(p.totPrj)}</span>`:''}
+        ${(p.bilGider||0)>0?`<span class="tag y">⚠️ %${p.bgOran} = ${fTL(p.bilGider)}</span>`:''}
+      </div>
+      <div class="pja">
+        <button class="pjb d" onclick="projeDetay(${p.id})">📊 Detay</button>
+        <button class="pjb e" onclick="pExcel(${p.id})">📥 Excel</button>
+        <button class="pjb r" onclick="pSil(${p.id})">🗑️ Sil</button>
+      </div>
+    </div>`).join('');
+}
+function projeDetay(id){
+  const p=getProjeler().find(x=>x.id===id);if(!p)return;
+  document.getElementById('det_t').textContent=p.adi;
+  const hasBil=(p.bilGider||0)>0,hasPrj=(p.totPrj||0)>0;
+  const cols=2+(hasPrj?1:0)+(hasBil?1:0);
+  let html=`<div class="minis" style="margin:0 0 10px;grid-template-columns:repeat(${cols},1fr)">
+    <div class="mini mat"><div class="mini-v">${fTL(p.totMat||0)}</div><div class="mini-l">🧱 Malzeme</div></div>
+    <div class="mini isc"><div class="mini-v">${fTL(p.totIsc||0)}</div><div class="mini-l">👷 İşçilik</div></div>
+    ${hasPrj?`<div class="mini prj"><div class="mini-v">${fTL(p.totPrj)}</div><div class="mini-l">📐 Proje</div></div>`:''}
+    ${hasBil?`<div class="mini bil"><div class="mini-v">${fTL(p.bilGider)}</div><div class="mini-l">⚠️ %${p.bgOran}</div></div>`:''}
+  </div>
+  <div class="ri full" style="margin-bottom:12px"><div class="rl">💰 TOPLAM</div><div class="rv" style="font-size:1.2rem">${fTL(p.toplam)}</div></div>`;
+  if(p.tip==='otomatik'&&p.sarf){
+    html+=`<div style="font-size:.74rem;font-weight:700;color:var(--G);margin-bottom:6px">📦 Sarfiyat</div>
+    <div class="rg" style="margin-bottom:12px">
+      <div class="ri"><div class="rl">Çimento</div><div class="rv">${p.sarf.cimento} ton</div></div>
+      <div class="ri"><div class="rl">Demir</div><div class="rv">${p.sarf.demir} ton</div></div>
+      <div class="ri"><div class="rl">Kum</div><div class="rv">${p.sarf.kum} m³</div></div>
+      <div class="ri"><div class="rl">Beton</div><div class="rv">${p.sarf.beton} m³</div></div>
+    </div>
+    <table class="ct"><tr><th>Kalem</th><th>m²</th><th>Malz.</th><th>İşç.</th><th>Top.</th></tr>
+    ${(p.kalemler||[]).map(k=>`<tr><td style="font-size:.73rem">${k.ad}</td><td style="font-size:.7rem">${k.alan}</td><td style="color:var(--B);font-size:.72rem">${fTL(k.matT)}</td><td style="color:var(--O);font-size:.72rem">${fTL(k.iscT)}</td><td style="font-weight:700;font-size:.74rem">${fTL(k.top)}</td></tr>`).join('')}
+    ${hasBil?`<tr class="tr-bil"><td colspan="4">⚠️ Bilinmeyen %${p.bgOran}</td><td>${fTL(p.bilGider)}</td></tr>`:''}
+    <tr class="tr-top"><td colspan="4">TOPLAM</td><td>${fTL(p.toplam)}</td></tr></table>`;
+  }
+  if((p.tip==='manuel'||p.tip==='karma')&&p.kalemler&&p.kalemler.length){
+    html+=`<table class="ct"><tr><th>Ad</th><th>Tip</th><th>Miktar</th><th>Tutar</th></tr>
+    ${p.kalemler.map(k=>`<tr><td style="font-size:.73rem">${k.item.ad}</td><td>${k.tip==='malzeme'?'🧱':k.tip==='iscilik'?'👷':'📐'}</td><td style="font-size:.72rem">${k.miktar} ${k.item.birim}</td><td style="font-weight:600">${fTL(k.top)}</td></tr>`).join('')}
+    ${hasBil?`<tr class="tr-bil"><td colspan="3">⚠️ Bilinmeyen %${p.bgOran}</td><td>${fTL(p.bilGider)}</td></tr>`:''}
+    <tr class="tr-top"><td colspan="3">TOPLAM</td><td>${fTL(p.toplam)}</td></tr></table>`;
+  }
+  html+=`<div style="margin-top:12px"><button class="btn btn-O" onclick="pExcel(${id})">📥 Excel İndir</button></div>`;
+  document.getElementById('det_c').innerHTML=html;
+  document.getElementById('detModal').classList.remove('hid');
+}
+function pSil(id){if(!confirm('Silinsin mi?'))return;localStorage.setItem('insaat_v5',JSON.stringify(getProjeler().filter(p=>p.id!==id)));renderProjeler();}
+function pExcel(id){const p=getProjeler().find(x=>x.id===id);if(p)exportCSV(p);}
+
+// ============================================================
+// EXCEL
+// ============================================================
+function exportCSV(h){
+  let csv='\uFEFF';
+  csv+=`İNŞAAT MALİYET RAPORU\nProje:,${h.adi}\nTarih:,${h.tarih}\nTip:,${h.tip}\n\n`;
+  if(h.sarf){
+    csv+=`MALZEME SARFIYATI\nMalzeme,Miktar,Birim\n`;
+    csv+=`Çimento,${h.sarf.cimento},ton\nDemir,${h.sarf.demir},ton\nKum,${h.sarf.kum},m³\nÇakıl,${h.sarf.cakil},m³\nBeton,${h.sarf.beton},m³\nTuğla,${h.sarf.tugla},adet\n\n`;
+  }
+  if(h.tip==='otomatik'&&h.kalemler){
+    csv+=`MALİYET TABLOSU (m² BAZINDA)\nKalem,Alan (m²),Malzeme ₺/m²,Malzeme Toplam,İşçilik ₺/m²,İşçilik Toplam,Kalem Toplam\n`;
+    h.kalemler.forEach(k=>csv+=`${k.ad},${k.alan},${k.matBM||0},${Math.round(k.matT)},${k.iscBM||0},${Math.round(k.iscT)},${Math.round(k.top)}\n`);
+    if(h.prjKalemler&&h.prjKalemler.length){
+      csv+=`\nPROJE GİDERLERİ\nKalem,Alan,₺/m²,Toplam\n`;
+      h.prjKalemler.forEach(p=>csv+=`${p.ad},${p.alan},${p.bmPrj},${Math.round(p.t)}\n`);
+    }
+  }
+  if((h.tip==='manuel'||h.tip==='karma')&&h.kalemler){
+    csv+=`KALEMLERİ\nAd,Tip,Miktar,Birim,Birim Fiyat,Toplam\n`;
+    h.kalemler.forEach(k=>csv+=`${k.item.ad},${k.tip},${k.miktar},${k.item.birim},${k.bf},${k.top}\n`);
+    if(h.ekKalemler&&h.ekKalemler.length){csv+=`\nEK KALEMLER\nAd,Tip,Miktar,Birim,Birim Fiyat,Toplam\n`;h.ekKalemler.forEach(k=>csv+=`${k.item.ad},${k.tip},${k.miktar},${k.item.birim},${k.bf},${k.top}\n`);}
+  }
+  csv+=`\nÖZET\nMalzeme,${Math.round(h.totMat||0)}\nİşçilik,${Math.round(h.totIsc||0)}\nProje/Ruhsat,${Math.round(h.totPrj||0)}\nAra Toplam,${Math.round(h.araToplam||h.toplam)}\nBilinmeyen Gider (%${h.bgOran||0}),${Math.round(h.bilGider||0)}\nGENEL TOPLAM,${Math.round(h.toplam)}\n`;
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=`${(h.adi||'proje').replace(/[^\w]/g,'_')}_maliyet.csv`;a.click();
+}
+
+// ============================================================
+// YARDIMCI
+// ============================================================
+function fTL(v){return new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0}).format(v||0);}
+function fTLRange(min,max){const f=v=>new Intl.NumberFormat('tr-TR').format(v);return`${f(min)}–${f(max)} ₺`;}
+function td(){return new Date().toLocaleDateString('tr-TR');}
+function goPage(id,btn){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pg-'+id).classList.add('active');btn.classList.add('active');
+  if(id==='fiyat'&&!aktifPCat)initFiyatlar();
+  if(id==='projeler')renderProjeler();
+}
+// ============================================================
+// ÖZEL YAPILAR
+// ============================================================
+let curOzType = 'hastane';
+
+const OZ_DESC = {
+  hastane: 'Hastane yapıları: yüksek teknik altyapı, özel mekanik ve tıbbi gaz tesisatı gerektiren kompleks yapılardır.',
+  okul: 'Okul yapıları: yangın güvenliği, akustik yalıtım ve engelli erişim standartlarına uygun eğitim binaları.',
+  fabrika: 'Fabrika ve endüstriyel tesisler: ağır yük taşıma, özel zemin ve endüstriyel altyapı gerektiren yapılar.',
+  prefabrik: 'Prefabrik yapılar: çelik konstrüksiyon veya beton elemanlarla hızlı kurulum sağlayan ekonomik yapı sistemleri.'
+};
+
+const OZ_TITLE = {
+  hastane: '🏥 Hastane Proje Bilgileri',
+  okul: '🏫 Okul Proje Bilgileri',
+  fabrika: '🏭 Fabrika / Tesis Bilgileri',
+  prefabrik: '🔩 Prefabrik Yapı Bilgileri'
+};
+
+const OZ_SISTEMLER = {
+  hastane: [
+    {id:'oz_yangın',lb:'🔥 Yangın Sistemi'},
+    {id:'oz_asansor',lb:'🛗 Asansör / Lift'},
+    {id:'oz_jenerat',lb:'⚡ Jeneratör'},
+    {id:'oz_hvac',lb:'❄️ Klima / HVAC'},
+    {id:'oz_hemzemin',lb:'♿ Engelli Erişim'},
+    {id:'oz_otomasyon',lb:'🖥️ BMS Otomasyon'},
+  ],
+  okul: [
+    {id:'oz_yangın',lb:'🔥 Yangın Sistemi'},
+    {id:'oz_asansor',lb:'🛗 Asansör'},
+    {id:'oz_kamera',lb:'📷 Güvenlik Kamera'},
+    {id:'oz_akustik',lb:'🔇 Akustik Yalıtım'},
+    {id:'oz_hemzemin',lb:'♿ Engelli Erişim'},
+    {id:'oz_lab',lb:'🔬 Lab Donanım'},
+  ],
+  fabrika: [
+    {id:'oz_yangın',lb:'🔥 Yangın Sistemi'},
+    {id:'oz_kompresör',lb:'💨 Kompresör Hattı'},
+    {id:'oz_atiksu',lb:'🌊 Atık Su Arıtma'},
+    {id:'oz_elektrik_guc',lb:'⚡ Güç Merkezi'},
+    {id:'oz_vinc_tesis',lb:'🏗️ Vinç Tesisatı'},
+    {id:'oz_otomasyon',lb:'🖥️ PLC Otomasyon'},
+  ],
+  prefabrik: [
+    {id:'oz_yangın',lb:'🔥 Yangın Sistemi'},
+    {id:'oz_temel',lb:'🏗️ Betonarme Temel'},
+    {id:'oz_zemin_kaplama',lb:'🔲 Zemin Kaplama'},
+    {id:'oz_elektrik_ic',lb:'⚡ Elektrik (İç)'},
+    {id:'oz_su_tesisat',lb:'🚿 Su Tesisatı'},
+    {id:'oz_dis_cephe',lb:'🏠 Dış Cephe Kaplama'},
+  ]
+};
+
+// m² başına birim maliyet (Malzeme + İşçilik, ₺/m²) — 2026 İstanbul bazlı
+const OZ_BM = {
+  hastane: {
+    ekonomik: {temel:1800,kaba:7500,mekanik:3500,elektrik:2800,hvac:2200,ince:2800,prj:900},
+    standart: {temel:2200,kaba:9000,mekanik:4500,elektrik:3800,hvac:3200,ince:3800,prj:1200},
+    lux:      {temel:2800,kaba:12000,mekanik:6500,elektrik:5500,hvac:4800,ince:6000,prj:1800},
+  },
+  okul: {
+    ekonomik: {temel:1200,kaba:5500,mekanik:1200,elektrik:1500,hvac:600,ince:1800,prj:550},
+    standart: {temel:1500,kaba:6800,mekanik:1600,elektrik:2000,hvac:900,ince:2400,prj:750},
+    lux:      {temel:1900,kaba:9000,mekanik:2200,elektrik:2800,hvac:1400,ince:3600,prj:1100},
+  },
+  fabrika: {
+    hafif:  {temel:800,kaba:3200,mekanik:800,elektrik:1200,hvac:0,ince:600,prj:350},
+    orta:   {temel:1000,kaba:4200,mekanik:1200,elektrik:1800,hvac:200,ince:800,prj:480},
+    agir:   {temel:1400,kaba:5800,mekanik:2000,elektrik:2800,hvac:400,ince:1000,prj:700},
+  },
+  prefabrik: {
+    hafif_celik: {temel:600,kaba:2800,mekanik:600,elektrik:800,hvac:200,ince:500,prj:300},
+    agir_prefab: {temel:900,kaba:3500,mekanik:800,elektrik:1000,hvac:300,ince:700,prj:380},
+    sandvic:     {temel:500,kaba:2200,mekanik:500,elektrik:700,hvac:600,ince:400,prj:250},
+    modüler:     {temel:300,kaba:1800,mekanik:400,elektrik:600,hvac:500,ince:350,prj:200},
+  }
+};
+
+// Sistem ek maliyetleri (sabit, adet başına ₺)
+const OZ_SYS_COST = {
+  oz_yangın:       {lb:'Yangın Algılama & Söndürme',cost_m2:180},
+  oz_asansor:      {lb:'Asansör Tesisatı',cost_sabit:280000},
+  oz_jenerat:      {lb:'Jeneratör',cost_sabit:450000},
+  oz_hvac:         {lb:'Klima / HVAC Sistemi',cost_m2:350},
+  oz_hemzemin:     {lb:'Engelli Erişim',cost_m2:80},
+  oz_otomasyon:    {lb:'BMS / PLC Otomasyon',cost_m2:220},
+  oz_kamera:       {lb:'Güvenlik Kamera Sistemi',cost_sabit:120000},
+  oz_akustik:      {lb:'Akustik Yalıtım',cost_m2:120},
+  oz_lab:          {lb:'Lab Donanım & Tesisat',cost_sabit:350000},
+  oz_kompresör:    {lb:'Kompresör & Basınçlı Hava Hattı',cost_m2:150},
+  oz_atiksu:       {lb:'Atık Su Arıtma',cost_sabit:800000},
+  oz_elektrik_guc: {lb:'Yüksek Güç Elektrik Merkezi',cost_sabit:600000},
+  oz_vinc_tesis:   {lb:'Vinç Tesisatı & Raylar',cost_sabit:0}, // hesaplanır
+  oz_temel:        {lb:'Betonarme Temel Güçlendirme',cost_m2:200},
+  oz_zemin_kaplama:{lb:'Endüstriyel Zemin Kaplama',cost_m2:180},
+  oz_elektrik_ic:  {lb:'İç Elektrik Tesisatı',cost_m2:120},
+  oz_su_tesisat:   {lb:'Su ve Sıhhi Tesisat',cost_m2:100},
+  oz_dis_cephe:    {lb:'Dış Cephe Kaplama',cost_m2:250},
+};
+
+const OZ_NOTLAR = {
+  hastane: `• Sağlık Bakanlığı Hastane Yapım Kılavuzu TS 13947 standartları geçerlidir.\n• Tıbbi gaz, medikal atık ve sterilizasyon ek maliyetleri dahildir.\n• Ameliyathane başına ortalama 1.2–1.8 M₺ ek maliyet öngörülmüştür.\n• Zemin kat yüksekliği min. 3.50m, hasta odası min. 12 m² dikkate alınmıştır.\n• KDV ve müteahhit karı dahil değildir; %18–22 ilave hesaplanmalıdır.`,
+  okul: `• MEB Okul Yapım Kılavuzu standartlarına göre hazırlanmıştır.\n• Derslik başına min. 52 m² alan esas alınmıştır.\n• Deprem yönetmeliği (TBDY 2018) gereklilikleri maliyet artışına dahildir.\n• Akustik yalıtım seçeneği özellikle müzik odaları için önerilir.\n• KDV ve müteahhit karı dahil değildir; %18–22 ilave hesaplanmalıdır.`,
+  fabrika: `• Endüstriyel yapı yönetmelikleri ve iş güvenliği standartları esas alınmıştır.\n• Vinç kapasitesi 10 ton üzeri için ek temel ve kolon güçlendirme gereklidir.\n• Atık su arıtma, kimya veya gıda sanayi tesisleri için zorunludur.\n• Zemin yükü fabrika tipine göre 500–2000 kg/m² arasında değişmektedir.\n• KDV ve müteahhit karı dahil değildir; %18–22 ilave hesaplanmalıdır.`,
+  prefabrik: `• Prefabrik yapılarda imalat + nakliye + montaj maliyetleri dahildir.\n• Temel inşaatı ayrıca yapılmakta olup fiyata dahil edilmesi önerilir.\n• Modüler konteyner yapılarda imar izni ve kalıcılık sınırlamaları kontrol edilmelidir.\n• Hafif çelik sistem yapılarda ısı yalıtım değerlerine dikkat edilmelidir.\n• KDV ve müteahhit karı dahil değildir; %18–22 ilave hesaplanmalıdır.`
+};
+
+function setOzType(tip, btn) {
+  curOzType = tip;
+  document.querySelectorAll('.oz-type').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('oz_descText').textContent = OZ_DESC[tip];
+  document.getElementById('oz_formTitle').textContent = OZ_TITLE[tip];
+  // extra alanları göster/gizle
+  ['hastane','okul','fabrika','prefabrik'].forEach(t => {
+    const el = document.getElementById('oz_extra_'+t);
+    if(el) el.style.display = t===tip?'block':'none';
+  });
+  // sistemleri yenile
+  renderOzSistemler(tip);
+  document.getElementById('oz_result').style.display='none';
+}
+
+function renderOzSistemler(tip) {
+  const list = OZ_SISTEMLER[tip] || [];
+  document.getElementById('oz_sistemler').innerHTML = list.map(s=>
+    `<label class="oz-ck"><input type="checkbox" id="${s.id}" checked>${s.lb}</label>`
+  ).join('');
+}
+
+function hesaplaOzel() {
+  const tip = curOzType;
+  const alan = parseFloat(document.getElementById('oz_alan').value);
+  const kat = parseFloat(document.getElementById('oz_kat').value)||1;
+  const bolge = parseFloat(document.getElementById('oz_bolge').value)||1;
+  const kal = document.getElementById('oz_kal').value;
+
+  if(!alan||alan<=0){alert('Lütfen brüt alanı girin!');return;}
+
+  const topAlan = alan * kat;
+
+  // Kalite / sınıf seçimi
+  let sinif = kal;
+  if(tip === 'fabrika') {
+    const fabTur = document.getElementById('oz_fabrikaTur')?.value || 'orta';
+    sinif = fabTur;
+  } else if(tip === 'prefabrik') {
+    sinif = document.getElementById('oz_prefTip')?.value || 'sandvic';
+  }
+
+  const bmTable = OZ_BM[tip];
+  if(!bmTable) return;
+  const bm = bmTable[sinif] || Object.values(bmTable)[1];
+
+  const KK = {ekonomik:.80, standart:1.0, lux:1.45};
+  const kk = (tip==='hastane'||tip==='okul') ? (KK[kal]||1) : 1;
+
+  // Ana kalemler
+  const kalemler = [
+    {ad:'Temel & Kazı İşleri', tutar: Math.round(bm.temel * topAlan * kk * bolge)},
+    {ad:'Kaba Yapı (İskelet/Duvar/Döşeme)', tutar: Math.round(bm.kaba * topAlan * kk * bolge)},
+    {ad:'Mekanik Tesisat', tutar: Math.round(bm.mekanik * topAlan * kk * bolge)},
+    {ad:'Elektrik Tesisatı', tutar: Math.round(bm.elektrik * topAlan * kk * bolge)},
+    {ad:'Isıtma / Soğutma (HVAC)', tutar: Math.round(bm.hvac * topAlan * kk * bolge)},
+    {ad:'İnce İşler & Kaplama', tutar: Math.round(bm.ince * topAlan * kk * bolge)},
+    {ad:'Proje & Mühendislik', tutar: Math.round(bm.prj * topAlan * kk * bolge)},
+  ];
+
+  // Hastane özel: yatak + ameliyathane
+  if(tip==='hastane') {
+    const yatak = parseInt(document.getElementById('oz_yatak')?.value)||0;
+    const ameliyat = parseInt(document.getElementById('oz_ameliyat')?.value)||0;
+    const tibbiGazK = parseFloat(document.getElementById('oz_tibbiGaz')?.value)||1;
+    if(yatak>0) kalemler.push({ad:`Tıbbi Gaz Tesisatı (${yatak} yatak, katsayı ×${tibbiGazK})`, tutar: Math.round(yatak * 28000 * tibbiGazK * bolge)});
+    if(ameliyat>0) kalemler.push({ad:`Ameliyathane Donanım (${ameliyat} adet)`, tutar: ameliyat * 1400000});
+  }
+
+  // Okul özel
+  if(tip==='okul') {
+    const sporSalonu = document.getElementById('oz_spor')?.value==='1';
+    if(sporSalonu) kalemler.push({ad:'Spor Salonu Ekipman & Zemin', tutar: 420000});
+    const derslik = parseInt(document.getElementById('oz_derslik')?.value)||0;
+    if(derslik>0) kalemler.push({ad:`Derslik Mobilya & Ekipman (${derslik} derslik)`, tutar: derslik * 35000});
+  }
+
+  // Fabrika: vinç
+  if(tip==='fabrika') {
+    const vincKap = parseFloat(document.getElementById('oz_vinc')?.value)||0;
+    if(vincKap>0) kalemler.push({ad:`Vinç Tesisatı (${vincKap} ton kapasiteli)`, tutar: Math.round(vincKap * 85000 * bolge)});
+  }
+
+  // Prefabrik: yükseklik faktörü
+  if(tip==='prefabrik') {
+    const yuk = parseFloat(document.getElementById('oz_yukseklik')?.value)||6;
+    if(yuk>6) kalemler.push({ad:`Yükseklik Farkı (>${6}m, ${yuk}m)`, tutar: Math.round((yuk-6)*topAlan*150)});
+  }
+
+  // Seçili sistemler
+  const sistemler = OZ_SISTEMLER[tip]||[];
+  sistemler.forEach(s => {
+    const el = document.getElementById(s.id);
+    if(el && el.checked) {
+      const sc = OZ_SYS_COST[s.id];
+      if(!sc) return;
+      let tutar = 0;
+      if(sc.cost_m2) tutar += sc.cost_m2 * topAlan * bolge;
+      if(sc.cost_sabit) tutar += sc.cost_sabit;
+      if(tutar>0) kalemler.push({ad: sc.lb, tutar: Math.round(tutar)});
+    }
+  });
+
+  const toplam = kalemler.reduce((s,k)=>s+k.tutar,0);
+  const m2Maliyet = Math.round(toplam/topAlan);
+
+  // Sonuçları göster
+  document.getElementById('oz_result').style.display='block';
+  document.getElementById('oz_toplamTxt').textContent = fTL(toplam);
+  document.getElementById('oz_minis').innerHTML = `
+    <div class="rg">
+      <div class="ri"><div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--B)">${fTL(m2Maliyet)}</div><div style="font-size:.6rem;color:var(--M);margin-top:2px">m² Birim Maliyet</div></div>
+      <div class="ri"><div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--G)">${topAlan.toLocaleString('tr-TR')} m²</div><div style="font-size:.6rem;color:var(--M);margin-top:2px">Toplam İnşaat Alanı</div></div>
+    </div>
+    <div class="rg" style="margin-top:4px">
+      <div class="ri"><div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--O)">${fTL(toplam*1.20)}</div><div style="font-size:.6rem;color:var(--M);margin-top:2px">%20 KDV Dahil Tahmini</div></div>
+      <div class="ri"><div style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--P)">${kalemler.length}</div><div style="font-size:.6rem;color:var(--M);margin-top:2px">Maliyet Kalemi</div></div>
+    </div>
+  `;
+
+  // Tablo
+  const rows = kalemler.map(k=>
+    `<tr><td>${k.ad}</td><td style="text-align:right;font-weight:600">${fTL(k.tutar)}</td><td style="text-align:right;color:var(--M)">${((k.tutar/toplam)*100).toFixed(1)}%</td></tr>`
+  ).join('');
+  document.getElementById('oz_kalemTable').innerHTML = `
+    <table class="oz-ct" style="width:100%">
+      <tr><th>Maliyet Kalemi</th><th style="text-align:right">Tutar</th><th style="text-align:right">Pay</th></tr>
+      ${rows}
+      <tr><td><strong>TOPLAM</strong></td><td style="text-align:right"><strong>${fTL(toplam)}</strong></td><td style="text-align:right"><strong>100%</strong></td></tr>
+    </table>`;
+
+  // Notlar
+  document.getElementById('oz_notlar').innerHTML = (OZ_NOTLAR[tip]||'').replace(/\n/g,'<br>');
+
+  // Scroll
+  setTimeout(()=>document.getElementById('oz_result').scrollIntoView({behavior:'smooth'}),100);
+}
+
+function kaydetOzel() {
+  const proje = {
+    id: Date.now(),
+    tip: 'ozel_' + curOzType,
+    adi: document.getElementById('oz_adi').value || 'Özel Yapı Projesi',
+    tarih: td(),
+    toplam: parseInt(document.getElementById('oz_toplamTxt').textContent.replace(/[^\d]/g,''))||0,
+    alan: parseFloat(document.getElementById('oz_alan').value)||0,
+    kat: parseFloat(document.getElementById('oz_kat').value)||1,
+    yapiTuru: curOzType
+  };
+  try {
+    const arr = JSON.parse(localStorage.getItem('insaat_projeler')||'[]');
+    arr.unshift(proje);
+    localStorage.setItem('insaat_projeler', JSON.stringify(arr));
+    alert('✅ Proje kaydedildi!');
+  } catch(e) { alert('Kayıt hatası: '+e.message); }
+}
+
+function pdfOzel() {
+  window.print();
+}
+
+// ============================================================
+// PAYWALL & ABONELİK SİSTEMİ
+// ============================================================
+
+const PW = {
+  TRIAL_DAYS: 3,
+  PLANS: {
+    aylik:  { id: 'com.insaatmaliyetpro.monthly',  price: 199,  label: 'Aylık 199₺'  },
+    yillik: { id: 'com.insaatmaliyetpro.yearly',   price: 999,  label: 'Yıllık 999₺' }
+  },
+
+  // LocalStorage anahtarları (RevenueCat entegrasyonuna kadar geçici)
+  KEYS: {
+    STATUS:     'imp_status',      // 'trial' | 'active' | 'expired' | 'none'
+    TRIAL_START:'imp_trial_start',
+    PLAN:       'imp_plan',
+    EXPIRES:    'imp_expires',
+  },
+
+  get status()     { return localStorage.getItem(this.KEYS.STATUS) || 'none'; },
+  get trialStart() { return parseInt(localStorage.getItem(this.KEYS.TRIAL_START) || '0'); },
+  get plan()       { return localStorage.getItem(this.KEYS.PLAN) || ''; },
+  get expires()    { return parseInt(localStorage.getItem(this.KEYS.EXPIRES) || '0'); },
+
+  trialDaysLeft() {
+    if(this.status !== 'trial') return 0;
+    const elapsed = Math.floor((Date.now() - this.trialStart) / 86400000);
+    return Math.max(0, this.TRIAL_DAYS - elapsed);
+  },
+
+  isPremium() {
+    const s = this.status;
+    if(s === 'active') return Date.now() < this.expires;
+    if(s === 'trial')  return this.trialDaysLeft() > 0;
+    return false;
+  },
+
+  startTrial() {
+    localStorage.setItem(this.KEYS.STATUS,      'trial');
+    localStorage.setItem(this.KEYS.TRIAL_START,  Date.now().toString());
+    localStorage.setItem(this.KEYS.PLAN,         '');
+    localStorage.setItem(this.KEYS.EXPIRES,      (Date.now() + this.TRIAL_DAYS * 86400000).toString());
+  },
+
+  activate(planKey) {
+    const months = planKey === 'yillik' ? 12 : 1;
+    const expires = Date.now() + months * 30 * 86400000;
+    localStorage.setItem(this.KEYS.STATUS,  'active');
+    localStorage.setItem(this.KEYS.PLAN,    planKey);
+    localStorage.setItem(this.KEYS.EXPIRES, expires.toString());
+  },
+
+  // Geliştirici/test: sıfırla
+  reset() {
+    Object.values(this.KEYS).forEach(k => localStorage.removeItem(k));
+    location.reload();
+  }
+};
+
+let selectedPlan = 'yillik';
+
+function selectPlan(plan) {
+  selectedPlan = plan;
+  document.querySelectorAll('.pw-plan').forEach(el => el.classList.remove('selected'));
+  document.getElementById('plan-' + plan).classList.add('selected');
+  const btn = document.querySelector('.pw-cta');
+  if(PW.status === 'trial') {
+    btn.textContent = PW.PLANS[plan].label + ' ile Abone Ol →';
+  }
+}
+
+function startTrial() {
+  const overlay = document.getElementById('pwOverlay');
+  const s = PW.status;
+
+  if(s === 'none') {
+    // İlk defa — deneme başlat
+    PW.startTrial();
+    overlay.style.display = 'none';
+    updateTrialBar();
+    showToast('🎁 3 günlük deneme başladı! Tüm özellikler açık.');
+    return;
+  }
+
+  if(s === 'trial') {
+    // Deneme devam ediyor — satın alma simülasyonu
+    // GERÇEK UYGULAMADA: RevenueCat purchasePackage() çağrısı buraya
+    simulatePurchase(selectedPlan);
+    return;
+  }
+
+  // expired
+  simulatePurchase(selectedPlan);
+}
+
+function simulatePurchase(planKey) {
+  // RevenueCat / StoreKit entegrasyonu için placeholder
+  // Gerçek: Purchases.purchasePackage(package)
+  const confirmed = confirm(
+    `${PW.PLANS[planKey].label} aboneliği başlatılsın mı?\n\n` +
+    `(Gerçek uygulamada App Store ödeme ekranı açılır)`
+  );
+  if(confirmed) {
+    PW.activate(planKey);
+    document.getElementById('pwOverlay').style.display = 'none';
+    updateTrialBar();
+    showToast('✅ Abonelik aktif! Tüm özellikler açık.');
+  }
+}
+
+function restorePurchase() {
+  // Gerçek: Purchases.restorePurchases()
+  alert('Satın alma geri yükleme: App Store bağlantısı kontrol ediliyor...\n(RevenueCat entegrasyonuyla otomatik çalışır)');
+}
+
+function updateTrialBar() {
+  const bar = document.getElementById('trialBar');
+  if(!bar) return;
+  if(PW.status === 'trial' && PW.trialDaysLeft() > 0) {
+    document.getElementById('trialDays').textContent = PW.trialDaysLeft();
+    bar.classList.add('show');
+    bar.onclick = () => showPaywall();
+  } else if(PW.status === 'active') {
+    bar.classList.remove('show');
+  } else if(!PW.isPremium()) {
+    bar.textContent = '🔒 Premium özellik — Abone ol';
+    bar.classList.add('show');
+    bar.onclick = () => showPaywall();
+  }
+}
+
+function showPaywall() {
+  const overlay = document.getElementById('pwOverlay');
+  overlay.style.display = 'flex';
+  // Deneme bittiyse buton metnini güncelle
+  if(PW.status === 'trial' && PW.trialDaysLeft() === 0) {
+    document.querySelector('.pw-cta').textContent = 'Abone Ol →';
+    document.querySelector('.pw-trial-badge').textContent = '⏰ Deneme Süresi Bitti';
+  } else if(PW.status === 'trial') {
+    document.querySelector('.pw-cta').textContent =
+      PW.PLANS[selectedPlan].label + ' ile Abone Ol →';
+    document.querySelector('.pw-trial-badge').textContent =
+      `⏳ ${PW.trialDaysLeft()} gün deneme hakkın var`;
+  }
+}
+
+function pwGateCheck(featureName) {
+  // Premium özellik kapısı — false dönerse işlemi durdur
+  if(PW.isPremium()) return true;
+  showPaywall();
+  showToast(`🔒 "${featureName}" premium özellik`);
+  return false;
+}
+
+function showToast(msg) {
+  let t = document.getElementById('pwToast');
+  if(!t) {
+    t = document.createElement('div');
+    t.id = 'pwToast';
+    t.style.cssText = 'position:fixed;bottom:84px;left:50%;transform:translateX(-50%);background:#1c6b40;color:#fff;padding:10px 18px;border-radius:20px;font-size:.8rem;font-weight:600;z-index:1000;opacity:0;transition:opacity .3s;white-space:nowrap;max-width:90vw;text-align:center';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.style.opacity = '0', 3000);
+}
+
+// ── Premium korumalı fonksiyonlar ──────────────────────────
+// Özel yapı hesaplama → premium
+const _hesaplaOzelOriginal = hesaplaOzel;
+window.hesaplaOzel = function() {
+  if(!pwGateCheck('Özel Yapı Hesaplama')) return;
+  _hesaplaOzelOriginal();
+};
+
+// Kaydetme → premium (5+ proje)
+const _kaydetOzelOriginal = kaydetOzel;
+window.kaydetOzel = function() {
+  const arr = JSON.parse(localStorage.getItem('insaat_projeler')||'[]');
+  if(!PW.isPremium() && arr.length >= 2) {
+    if(!pwGateCheck('Sınırsız Proje Kaydetme')) return;
+  }
+  _kaydetOzelOriginal();
+};
+
+// ── Başlangıç ──────────────────────────────────────────────
+(function pwInit() {
+  const s = PW.status;
+  if(s === 'none') {
+    // İlk açılış — paywall göster (500ms gecikme, sayfa yüklensın)
+    setTimeout(() => showPaywall(), 600);
+  } else if(s === 'trial' && PW.trialDaysLeft() === 0) {
+    // Deneme bitti
+    localStorage.setItem(PW.KEYS.STATUS, 'expired');
+    setTimeout(() => showPaywall(), 600);
+  } else {
+    updateTrialBar();
+  }
+})();
+
+// ============================================================
+// ADMİN PANELİ
+// ============================================================
+const ADMIN_KEY = 'imp_admin_pw';
+const ADMIN_FIYAT_KEY = 'imp_admin_fiyatlar';
+const ADMIN_LOG_KEY = 'imp_admin_log';
+const ADMIN_DEFAULT_PW = 'octo2026';
+
+function adminGiris() {
+  const girilenPw = document.getElementById('admin_pw').value;
+  const kayitliPw = localStorage.getItem(ADMIN_KEY) || ADMIN_DEFAULT_PW;
+  if(girilenPw === kayitliPw) {
+    document.getElementById('admin_lock').style.display = 'none';
+    document.getElementById('admin_content').style.display = 'block';
+    adminFiyatlariYukle();
+    adminGuncellemeBilgisiGoster();
+  } else {
+    alert('❌ Hatalı şifre!');
+    document.getElementById('admin_pw').value = '';
+  }
+}
+
+function adminCikis() {
+  document.getElementById('admin_lock').style.display = 'block';
+  document.getElementById('admin_content').style.display = 'none';
+  document.getElementById('admin_pw').value = '';
+}
+
+function adminSifreDegistir() {
+  const yeni = document.getElementById('admin_yeni_pw').value;
+  const tekrar = document.getElementById('admin_yeni_pw2').value;
+  if(yeni.length < 6) { alert('Şifre en az 6 karakter olmalı!'); return; }
+  if(yeni !== tekrar) { alert('Şifreler eşleşmiyor!'); return; }
+  localStorage.setItem(ADMIN_KEY, yeni);
+  document.getElementById('admin_yeni_pw').value = '';
+  document.getElementById('admin_yeni_pw2').value = '';
+  alert('✅ Şifre güncellendi!');
+}
+
+const ADMIN_VARSAYILAN_FIYATLAR = {
+  konut_eko: 18000, konut_std: 24000, konut_lux: 38000,
+  hast_eko: 27000,  hast_std: 34000,  hast_lux: 52000,
+  fab_hafif: 8000,  fab_agir: 14000,
+  pref_sandvic: 4500, pref_celik: 6000
+};
+
+function adminFiyatlariYukle() {
+  const kayitli = JSON.parse(localStorage.getItem(ADMIN_FIYAT_KEY) || '{}');
+  const fiyatlar = {...ADMIN_VARSAYILAN_FIYATLAR, ...kayitli};
+  Object.keys(fiyatlar).forEach(k => {
+    const el = document.getElementById('fp_' + k);
+    if(el) el.value = fiyatlar[k];
+  });
+}
+
+function adminFiyatKaydet() {
+  const fiyatlar = {};
+  Object.keys(ADMIN_VARSAYILAN_FIYATLAR).forEach(k => {
+    const el = document.getElementById('fp_' + k);
+    if(el && el.value) fiyatlar[k] = parseInt(el.value);
+  });
+  localStorage.setItem(ADMIN_FIYAT_KEY, JSON.stringify(fiyatlar));
+  const log = {tarih: new Date().toLocaleString('tr-TR'), fiyatlar};
+  localStorage.setItem(ADMIN_LOG_KEY, JSON.stringify(log));
+  adminGuncellemeBilgisiGoster();
+  alert('✅ Fiyatlar kaydedildi! Tüm hesaplamalar güncellendi.');
+}
+
+function adminFiyatSifirla() {
+  if(!confirm('Fiyatlar varsayılan değerlere dönecek. Emin misiniz?')) return;
+  localStorage.removeItem(ADMIN_FIYAT_KEY);
+  adminFiyatlariYukle();
+  alert('✅ Varsayılan fiyatlara döndü.');
+}
+
+function adminGuncellemeBilgisiGoster() {
+  const el = document.getElementById('admin_guncelleme_bilgi');
+  if(!el) return;
+  const log = JSON.parse(localStorage.getItem(ADMIN_LOG_KEY) || 'null');
+  if(log) {
+    el.innerHTML = `Son güncelleme: <strong>${log.tarih}</strong><br>
+      Konut standart: <strong>${(log.fiyatlar.konut_std||24000).toLocaleString('tr-TR')} ₺/m²</strong><br>
+      Hastane standart: <strong>${(log.fiyatlar.hast_std||34000).toLocaleString('tr-TR')} ₺/m²</strong>`;
+  } else {
+    el.innerHTML = 'Henüz güncelleme yapılmadı. Varsayılan fiyatlar aktif.';
+  }
+}
+
+function adminNotGuncelle() {
+  const not = prompt('Güncelleme notunu girin:');
+  if(!not) return;
+  const log = JSON.parse(localStorage.getItem(ADMIN_LOG_KEY) || '{}');
+  log.not = not;
+  log.tarih = new Date().toLocaleString('tr-TR');
+  localStorage.setItem(ADMIN_LOG_KEY, JSON.stringify(log));
+  adminGuncellemeBilgisiGoster();
+  alert('✅ Not kaydedildi.');
+}
+
+function adminVeriyiDisa() {
+  const projeler = localStorage.getItem('insaat_projeler') || '[]';
+  const blob = new Blob([projeler], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'projeler_' + new Date().toLocaleDateString('tr-TR').replace(/\./g,'-') + '.json';
+  a.click();
+}
+
+function adminVeriyiIce() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+  input.onchange = e => {
+    const file = e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        if(!Array.isArray(data)) throw new Error('Geçersiz format');
+        localStorage.setItem('insaat_projeler', JSON.stringify(data));
+        alert(`✅ ${data.length} proje içe aktarıldı!`);
+      } catch(err) { alert('❌ Dosya okunamadı: ' + err.message); }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+function adminTumVeriSil() {
+  if(!confirm('TÜM veriler silinecek (projeler, fiyatlar, abonelik). Emin misiniz?')) return;
+  if(!confirm('Son onay: Bu işlem geri alınamaz!')) return;
+  localStorage.clear();
+  alert('✅ Tüm veriler temizlendi. Uygulama yeniden başlayacak.');
+  location.reload();
+}
+
+// Hakkında sayfası — abonelik durumu göster
+function hakkindaAbonerDurumu() {
+  const el = document.getElementById('hk_abone_durum');
+  if(!el) return;
+  if(PW.isPremium()) {
+    const s = PW.status;
+    if(s === 'trial') {
+      el.textContent = `🎁 Deneme süresi aktif — ${PW.trialDaysLeft()} gün kaldı`;
+    } else {
+      const exp = new Date(PW.expires).toLocaleDateString('tr-TR');
+      el.textContent = `✅ Pro abonelik aktif — ${exp} tarihine kadar`;
+    }
+    el.style.background = 'var(--GL)';
+    el.style.color = 'var(--G)';
+  } else {
+    el.textContent = '🔒 Aktif abonelik yok — Abone Ol';
+    el.style.background = 'var(--OL)';
+    el.style.color = 'var(--O)';
+    el.style.cursor = 'pointer';
+    el.onclick = () => showPaywall();
+  }
+}
+
+// goPage fonksiyonunu admin ve hakkinda için genişlet
+const _goPageOriginal = goPage;
+window.goPage = function(id, btn) {
+  _goPageOriginal(id, btn);
+  if(id === 'hakkinda') hakkindaAbonerDurumu();
+};
+
+// Admin fiyatlarını hesaplamaya entegre et
+(function applyAdminPrices() {
+  try {
+    const kayitli = JSON.parse(localStorage.getItem(ADMIN_FIYAT_KEY) || '{}');
+    if(Object.keys(kayitli).length === 0) return;
+    // OZ_BM fiyatlarını admin fiyatlarıyla güncelle
+    if(typeof OZ_BM !== 'undefined') {
+      if(kayitli.hast_eko) OZ_BM.hastane.ekonomik.kaba = kayitli.hast_eko;
+      if(kayitli.hast_std) OZ_BM.hastane.standart.kaba = kayitli.hast_std;
+      if(kayitli.hast_lux) OZ_BM.hastane.lux.kaba = kayitli.hast_lux;
+      if(kayitli.fab_hafif) OZ_BM.fabrika.hafif.kaba = kayitli.fab_hafif;
+      if(kayitli.fab_agir) OZ_BM.fabrika.agir.kaba = kayitli.fab_agir;
+      if(kayitli.pref_sandvic) OZ_BM.prefabrik.sandvic.kaba = kayitli.pref_sandvic;
+      if(kayitli.pref_celik) OZ_BM.prefabrik.hafif_celik.kaba = kayitli.pref_celik;
+    }
+  } catch(e) { console.warn('Admin fiyat yükleme hatası:', e); }
+})();
+
+// ============================================================
+// İlk yükleme
+renderOzSistemler('hastane');
+
+if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+initFiyatlar();
+</script>
+
+
+</body></html>
