@@ -2332,16 +2332,6 @@ window.hesaplaOzel = function() {
   _hesaplaOzelOriginal();
 };
 
-// Kaydetme → premium (5+ proje)
-const _kaydetOzelOriginal = kaydetOzel;
-window.kaydetOzel = function() {
-  const arr = JSON.parse(localStorage.getItem('insaat_projeler')||'[]');
-  if(!PW.isPremium() && arr.length >= 2) {
-    if(!pwGateCheck('Sınırsız Proje Kaydetme')) return;
-  }
-  _kaydetOzelOriginal();
-};
-
 // ── Başlangıç ──────────────────────────────────────────────
 (function pwInit() {
   const s = PW.status;
@@ -2590,13 +2580,19 @@ window.kaydetOzel = function(){
   kaydet(obj);
 };
 
-window.excelOzel = function(){
+wwindow.excelOzel = function(){
   const obj = ozelProjeOlustur();
+
   if(!obj.toplam || obj.toplam <= 0){
     alert('Önce özel yapı hesabı yap.');
     return;
   }
-  exportCSV(obj);
+
+  try {
+    exportCSV(obj);
+  } catch(e) {
+    alert('Excel hatası: ' + e.message);
+  }
 };
 </script>
 
