@@ -1800,27 +1800,44 @@ function pExcel(id){const p=getProjeler().find(x=>x.id===id);if(p)exportCSV(p);}
 function exportCSV(h){
   let csv='\uFEFF';
   csv+=`İNŞAAT MALİYET RAPORU\nProje:,${h.adi}\nTarih:,${h.tarih}\nTip:,${h.tip}\n\n`;
+
   if(h.sarf){
     csv+=`MALZEME SARFIYATI\nMalzeme,Miktar,Birim\n`;
     csv+=`Çimento,${h.sarf.cimento},ton\nDemir,${h.sarf.demir},ton\nKum,${h.sarf.kum},m³\nÇakıl,${h.sarf.cakil},m³\nBeton,${h.sarf.beton},m³\nTuğla,${h.sarf.tugla},adet\n\n`;
   }
+
   if(h.tip==='otomatik'&&h.kalemler){
-    csv+=`MALİYET TABLOSU (m² BAZINDA)\nKalem,Alan (m²),Malzeme ₺/m²,Malzeme Toplam,İşçilik ₺/m²,İşçilik Toplam,Kalem Toplam\n`;
+    csv+=`MALİYET TABLOSU (m² BAZINDA)\nKalem,Alan (m²),Malzeme TL/m²,Malzeme Toplam,İşçilik TL/m²,İşçilik Toplam,Kalem Toplam\n`;
     h.kalemler.forEach(k=>csv+=`${k.ad},${k.alan},${k.matBM||0},${Math.round(k.matT)},${k.iscBM||0},${Math.round(k.iscT)},${Math.round(k.top)}\n`);
+
     if(h.prjKalemler&&h.prjKalemler.length){
-      csv+=`\nPROJE GİDERLERİ\nKalem,Alan,₺/m²,Toplam\n`;
+      csv+=`\nPROJE GİDERLERİ\nKalem,Alan,TL/m²,Toplam\n`;
       h.prjKalemler.forEach(p=>csv+=`${p.ad},${p.alan},${p.bmPrj},${Math.round(p.t)}\n`);
     }
   }
+
   if((h.tip==='manuel'||h.tip==='karma')&&h.kalemler){
     csv+=`KALEMLERİ\nAd,Tip,Miktar,Birim,Birim Fiyat,Toplam\n`;
     h.kalemler.forEach(k=>csv+=`${k.item.ad},${k.tip},${k.miktar},${k.item.birim},${k.bf},${k.top}\n`);
-    if(h.ekKalemler&&h.ekKalemler.length){csv+=`\nEK KALEMLER\nAd,Tip,Miktar,Birim,Birim Fiyat,Toplam\n`;h.ekKalemler.forEach(k=>csv+=`${k.item.ad},${k.tip},${k.miktar},${k.item.birim},${k.bf},${k.top}\n`);}
+
+    if(h.ekKalemler&&h.ekKalemler.length){
+      csv+=`\nEK KALEMLER\nAd,Tip,Miktar,Birim,Birim Fiyat,Toplam\n`;
+      h.ekKalemler.forEach(k=>csv+=`${k.item.ad},${k.tip},${k.miktar},${k.item.birim},${k.bf},${k.top}\n`);
+    }
   }
+
   csv+=`\nÖZET\nMalzeme,${Math.round(h.totMat||0)}\nİşçilik,${Math.round(h.totIsc||0)}\nProje/Ruhsat,${Math.round(h.totPrj||0)}\nAra Toplam,${Math.round(h.araToplam||h.toplam)}\nBilinmeyen Gider (%${h.bgOran||0}),${Math.round(h.bilGider||0)}\nGENEL TOPLAM,${Math.round(h.toplam)}\n`;
-  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download=`${(h.adi||'proje').replace(/[^\w]/g,'_')}_maliyet.csv`;a.click();
+
+  const fileName = `${(h.adi||'proje').replace(/[^\w]/g,'_')}_maliyet.csv`;
+
+  const encodedUri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+
+  const a = document.createElement('a');
+  a.href = encodedUri;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 
 // ============================================================
