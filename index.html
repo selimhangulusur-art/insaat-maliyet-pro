@@ -895,7 +895,7 @@ body{background:var(--bg);color:var(--T);font-family:'DM Sans',sans-serif;min-he
     </div>
     <div style="padding:0 14px 14px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
       <button class="btn btn-B bsm" onclick="kaydetOzel()">💾 Kaydet</button>
-      <button class="btn btn-out bsm" onclick="pdfOzel()">📄 PDF</button>
+      <button class="btn btn-B bsm" onclick="excelOzel()">📥 Excel</button>
     </div>
   </div>
 </div>
@@ -2123,6 +2123,56 @@ function kaydetOzel() {
 }
 
 function pdfOzel() {
+  function ozelObj(){
+  const alan = parseFloat(document.getElementById('oz_alan')?.value || 0);
+  const kat = parseFloat(document.getElementById('oz_kat')?.value || 0);
+  const toplamText = document.getElementById('oz_toplamtxt')?.textContent || '0';
+  const toplam = parseFloat(toplamText.replace(/[^\d]/g,'')) || 0;
+
+  return {
+    adi: 'Özel Yapı Maliyeti',
+    tarih: td(),
+    tip: 'manuel',
+    toplam: toplam,
+    totMat: 0,
+    totIsc: toplam,
+    totPrj: 0,
+    araToplam: toplam,
+    bilGider: 0,
+    bgOran: 0,
+    topAlan: alan,
+    kalemler: [
+      {
+        item: {
+          ad: `Özel Yapı - ${kat} kat`,
+          birim: 'toplam'
+        },
+        tip: 'iscilik',
+        miktar: 1,
+        bf: toplam,
+        top: toplam
+      }
+    ]
+  };
+}
+
+function kaydetOzel(){
+  const obj = ozelObj();
+  if(!obj.toplam || obj.toplam <= 0){
+    alert('Önce özel yapı hesabı yap.');
+    return;
+  }
+  kaydet(obj);
+}
+
+function excelOzel(){
+  const obj = ozelObj();
+  if(!obj.toplam || obj.toplam <= 0){
+    alert('Önce özel yapı hesabı yap.');
+    return;
+  }
+  exportCSV(obj);
+}
   window.print();
 }
 
