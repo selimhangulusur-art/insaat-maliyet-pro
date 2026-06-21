@@ -1,4 +1,4 @@
-const CACHE_NAME = 'insaat-maliyet-pro-v7';
+const CACHE_NAME = 'insaat-maliyet-pro-v8';
 const ASSETS = [
   './',
   './index.html',
