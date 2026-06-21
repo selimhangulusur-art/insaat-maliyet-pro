@@ -2103,25 +2103,7 @@ function hesaplaOzel() {
   setTimeout(()=>document.getElementById('oz_result').scrollIntoView({behavior:'smooth'}),100);
 }
 
-function kaydetOzel() {
-  const proje = {
-    id: Date.now(),
-    tip: 'ozel_' + curOzType,
-    adi: document.getElementById('oz_adi').value || 'Özel Yapı Projesi',
-    tarih: td(),
-    toplam: parseInt(document.getElementById('oz_toplamTxt').textContent.replace(/[^\d]/g,''))||0,
-    alan: parseFloat(document.getElementById('oz_alan').value)||0,
-    kat: parseFloat(document.getElementById('oz_kat').value)||1,
-    yapiTuru: curOzType
-  };
-  try {
-    const arr = JSON.parse(localStorage.getItem('insaat_projeler')||'[]');
-    arr.unshift(proje);
-    localStorage.setItem('insaat_projeler', JSON.stringify(arr));
-    alert('✅ Proje kaydedildi!');
-  } catch(e) { alert('Kayıt hatası: '+e.message); }
-}
-
+  
 function ozelObj(){
   const alan = parseFloat(document.getElementById('oz_alan')?.value || 0);
   const kat = parseFloat(document.getElementById('oz_kat')?.value || 0);
@@ -2173,9 +2155,6 @@ function excelOzel(){
   exportCSV(obj);
 }
 
-function pdfOzel(){
-  window.print();
-}
 
 // ============================================================
 // PAYWALL & ABONELİK SİSTEMİ
