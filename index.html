@@ -2122,11 +2122,10 @@ function kaydetOzel() {
   } catch(e) { alert('Kayıt hatası: '+e.message); }
 }
 
-function pdfOzel() {
-  function ozelObj(){
+function ozelObj(){
   const alan = parseFloat(document.getElementById('oz_alan')?.value || 0);
   const kat = parseFloat(document.getElementById('oz_kat')?.value || 0);
-  const toplamText = document.getElementById('oz_toplamtxt')?.textContent || '0';
+  const toplamText = document.getElementById('oz_toplamTxt')?.textContent || '0';
   const toplam = parseFloat(toplamText.replace(/[^\d]/g,'')) || 0;
 
   return {
@@ -2173,6 +2172,8 @@ function excelOzel(){
   }
   exportCSV(obj);
 }
+
+function pdfOzel(){
   window.print();
 }
 
