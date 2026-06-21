@@ -2548,6 +2548,56 @@ renderOzSistemler('hastane');
 
 if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 initFiyatlar();
+  // === ÖZEL YAPI KESİN DÜZELTME ===
+function ozelProjeOlustur(){
+  const alan = parseFloat(document.getElementById('oz_alan')?.value || 0);
+  const kat = parseFloat(document.getElementById('oz_kat')?.value || 1);
+  const adi = document.getElementById('oz_adi')?.value || 'Özel Yapı Projesi';
+  const toplamText = document.getElementById('oz_toplamTxt')?.textContent || '0';
+  const toplam = parseInt(toplamText.replace(/[^\d]/g,'')) || 0;
+
+  return {
+    adi: adi,
+    tarih: td(),
+    tip: 'manuel',
+    toplam: toplam,
+    totMat: 0,
+    totIsc: toplam,
+    totPrj: 0,
+    araToplam: toplam,
+    bilGider: 0,
+    bgOran: 0,
+    topAlan: alan,
+    kalemler: [{
+      item: {
+        ad: 'Özel Yapı - ' + kat + ' kat',
+        birim: 'toplam'
+      },
+      tip: 'iscilik',
+      miktar: 1,
+      bf: toplam,
+      top: toplam
+    }]
+  };
+}
+
+window.kaydetOzel = function(){
+  const obj = ozelProjeOlustur();
+  if(!obj.toplam || obj.toplam <= 0){
+    alert('Önce özel yapı hesabı yap.');
+    return;
+  }
+  kaydet(obj);
+};
+
+window.excelOzel = function(){
+  const obj = ozelProjeOlustur();
+  if(!obj.toplam || obj.toplam <= 0){
+    alert('Önce özel yapı hesabı yap.');
+    return;
+  }
+  exportCSV(obj);
+};
 </script>
 
 
