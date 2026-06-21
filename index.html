@@ -1830,14 +1830,17 @@ function exportCSV(h){
 
   const fileName = `${(h.adi||'proje').replace(/[^\w]/g,'_')}_maliyet.csv`;
 
-  const encodedUri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
-
+  if (window.Android && Android.saveCsv) {
+  Android.saveCsv(fileName, csv);
+} else {
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
   const a = document.createElement('a');
-  a.href = encodedUri;
+  a.href = URL.createObjectURL(blob);
   a.download = fileName;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+}
 }
 
 // ============================================================
